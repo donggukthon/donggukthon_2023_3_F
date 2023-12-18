@@ -1,12 +1,14 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
+import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
 import MainPage from "./pages/MainPage";
 import HomePage from "./pages/HomePage";
 import CharityPage from "./pages/CharityPage";
 import BadgePage from "./pages/BadgePage";
 import MyPage from "./pages/MyPage";
 import HistoryPage from "./pages/HistoryPage";
+import DetailPage from "./pages/DetailPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -15,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
   font-weight: normal;
   font-style: normal;
 }
+
+ @font-face {
+    font-family: 'titleFont';
+    src: local('titleFont'), url(${titleFont}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
  body {
   font-family: 'basicFont';
@@ -56,6 +65,7 @@ function App() {
           <Route path="/badge" element={<BadgePage />} />
           <Route path="/profile" element={<MyPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/detail" element={<DetailPage />} />
         </Routes>
       </div>
     </BrowserRouter>
