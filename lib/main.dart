@@ -4,6 +4,7 @@ import 'package:boonglunteer_view/screens/charity_screen.dart';
 import 'package:boonglunteer_view/screens/home_screen.dart';
 import 'package:boonglunteer_view/screens/profile_screen.dart';
 import 'package:boonglunteer_view/screens/start_screen.dart';
+import 'package:boonglunteer_view/widgets/bottom_container.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const StartScreen(),
-          '/home': (context) => const HomeScreen(),
+          '/home': (context) => const BottomContainer(),
           '/charity': (context) => const CharityScreen(),
           '/badge': (context) => const BadgeScreen(),
           '/profile': (context) => const ProfileScreen(),
