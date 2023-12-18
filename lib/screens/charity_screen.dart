@@ -1,5 +1,4 @@
 import 'package:boonglunteer_view/widgets/custom_appbar.dart';
-import 'package:boonglunteer_view/widgets/custom_bottombar.dart';
 import 'package:flutter/material.dart';
 
 class CharityScreen extends StatelessWidget {
@@ -25,7 +24,6 @@ class CharityScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }
