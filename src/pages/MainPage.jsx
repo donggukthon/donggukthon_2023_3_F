@@ -1,15 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import presentRoot from '../assets/images/present.png';
+import React from "react";
+import styled from "styled-components";
+import presentRoot from "../assets/images/present.png";
 
 function MainPage() {
   return (
     <>
       <ImagePart>
-        <img src={presentRoot} width='180px' padding='0'/>
+        <img src={presentRoot} width="180px" padding="0" />
       </ImagePart>
       <TextPart>
-        <text>Create Bread<br/>and Donate!</text>
+        <text>
+          Create Bread
+          <br />
+          and Donate!
+        </text>
       </TextPart>
       <WhiteBoxContainer>
         <WhiteBox />
@@ -40,7 +44,7 @@ const TextPart = styled.div`
   justify-content: center;
 
   text {
-    font-family: 'Rampart One', sans-serif;
+    font-family: "Rampart One", sans-serif;
     font-size: 30px;
     font-weight: 700;
   }
@@ -49,14 +53,14 @@ const TextPart = styled.div`
     font-family: "RampartOne";
     font-style: normal;
     font-weight: 400;
-    src: url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap') format('ttf');
+    src: url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap") format("ttf");
   }
 `;
 
 const WhiteBoxContainer = styled.div`
   display: flex;
   overflow-x: auto;
-  padding: 20px; 
+  padding: 20px;
 `;
 
 const WhiteBox = styled.div`
@@ -73,10 +77,10 @@ const WhiteBox = styled.div`
 const StartButton = styled.button`
   width: 250px;
   height: 45px;
-  background: var(--button-bg-color, #ED3333);
+  background: var(--button-bg-color, #ed3333);
   border: none;
   border-radius: 15px 15px 15px 15px;
-  font-family: 'Godo', sans-serif;
+  font-family: "Godo", sans-serif;
   font-size: 20px;
   color: white;
   margin: 0 auto 0 auto;
@@ -93,11 +97,11 @@ const StartButton = styled.button`
   }
 
   // 고도체
-  @font-face {  
-    font-family: 'Godo';
+  @font-face {
+    font-family: "Godo";
     font-style: normal;
     font-weight: 700;
-    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
   }
 `;
 
