@@ -1,6 +1,5 @@
 import 'package:boonglunteer_view/constants/colors.dart';
 import 'package:boonglunteer_view/screens/history_screen.dart';
-import 'package:boonglunteer_view/widgets/custom_bottombar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -97,7 +96,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }
