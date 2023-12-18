@@ -1,4 +1,5 @@
 import 'package:boonglunteer_view/constants/colors.dart';
+import 'package:boonglunteer_view/widgets/badge_widget.dart';
 import 'package:boonglunteer_view/widgets/charity_widget.dart';
 import 'package:boonglunteer_view/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
@@ -35,28 +36,43 @@ class BadgeScreen extends StatelessWidget {
                   color: fontColor,
                   fontSize: 18,
                 )),
-            Text('앞으로 또 어떤 붕어빵을 획득할 수 있을까요?',
-                style: TextStyle(
-                  color: fontColor,
-                  fontSize: 18,
-                )),
+            Text(
+              '앞으로 또 어떤 붕어빵을 획득할 수 있을까요?',
+              style: TextStyle(
+                color: fontColor,
+                fontSize: 18,
+              ),
+            ),
             Padding(
-              padding: EdgeInsets.fromLTRB(30, 45, 30, 0),
+              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  CharityWidget(charityName: '어린이'),
-                  CharityWidget(charityName: '독거노인'),
+                  BadgeWidget(badgeName: '뱃지1', image: 'badge1'),
+                  BadgeWidget(badgeName: '뱃지2', image: 'badge2'),
+                  BadgeWidget(badgeName: '뱃지3', image: 'badge3'),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(30, 15, 30, 20),
+              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  CharityWidget(charityName: '난민'),
-                  CharityWidget(charityName: '저소득층'),
+                  BadgeWidget(badgeName: '뱃지4', image: 'badge4'),
+                  BadgeWidget(badgeName: '뱃지5', image: 'badge5'),
+                  BadgeWidget(badgeName: '뱃지6', image: 'badge6'),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  BadgeWidget(badgeName: '뱃지7', image: 'badge7'),
+                  BadgeWidget(badgeName: '뱃지8', image: 'badge8'),
+                  BadgeWidget(badgeName: '뱃지9', image: 'badge9'),
                 ],
               ),
             ),
