@@ -2,6 +2,11 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
 import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
+import CharityPage from "./pages/CharityPage";
+import BadgePage from "./pages/BadgePage";
+import MyPage from "./pages/MyPage";
+import HistoryPage from "./pages/HistoryPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -46,6 +51,11 @@ function App() {
       <div className="layout">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/charity" element={<CharityPage />} />
+          <Route path="/badge" element={<BadgePage />} />
+          <Route path="/profile" element={<MyPage />} />
+          <Route path="/history" element={<HistoryPage />} />
         </Routes>
       </div>
     </BrowserRouter>
