@@ -11,7 +11,7 @@ class BadgeWidget extends StatelessWidget {
     return Container(
       width: 104,
       height: 120,
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(2),
       decoration: ShapeDecoration(
         color: const Color(0xFFFCFCFC),
         shape: RoundedRectangleBorder(
@@ -47,8 +47,8 @@ class BadgeWidget extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           SizedBox(
-            width: 80,
-            height: 55,
+            width: 90,
+            height: 65,
             child: IconButton(
               onPressed: null,
               icon: Image.asset('assets/images/$image.png'),
