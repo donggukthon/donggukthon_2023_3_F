@@ -83,6 +83,14 @@ flutter:
     - family: commentFont
       fonts:
         - asset: assets/fonts/RampartOne.ttf
+    - family: semiTitleFont
+      fonts:
+        - asset: assets/fonts/VollkornSCR.ttf
+          weight: 400
+    - family: semiTitleBoldFont
+      fonts:
+        - asset: assets/fonts/VollkornSCB.ttf
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

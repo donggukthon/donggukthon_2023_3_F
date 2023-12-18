@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:boonglunteer_view/constants/colors.dart';
+import 'package:boonglunteer_view/screens/login_screen.dart';
 import 'package:get/utils.dart';
 import 'package:boonglunteer_view/widgets/start_description.dart';
 
@@ -51,7 +53,9 @@ class _StartScreenState extends State<StartScreen> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) => const LoginScreen()));
+                },
                 child: const Text(
                   '시작하기',
                   style: TextStyle(
