@@ -1,5 +1,6 @@
 import 'package:boonglunteer_view/constants/colors.dart';
 import 'package:boonglunteer_view/screens/history_screen.dart';
+import 'package:boonglunteer_view/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -60,35 +61,11 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: redButtonColor,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 24,
-                        horizontal: 100,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HistoryScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      '기부 내역 조회',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 40.0),
+                  child: ButtonWidget(
+                    widgetText: '기부 내역 조회',
+                    destination: HistoryScreen(),
                   ),
                 ),
               ],
