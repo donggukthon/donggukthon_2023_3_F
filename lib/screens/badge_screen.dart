@@ -1,6 +1,5 @@
 import 'package:boonglunteer_view/constants/colors.dart';
 import 'package:boonglunteer_view/widgets/badge_widget.dart';
-import 'package:boonglunteer_view/widgets/charity_widget.dart';
 import 'package:boonglunteer_view/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +43,7 @@ class BadgeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+              padding: EdgeInsets.fromLTRB(30, 40, 30, 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[

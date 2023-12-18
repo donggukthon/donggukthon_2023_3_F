@@ -1,7 +1,6 @@
 import 'package:boonglunteer_view/constants/colors.dart';
 import 'package:boonglunteer_view/screens/badge_screen.dart';
 import 'package:boonglunteer_view/screens/charity_screen.dart';
-import 'package:boonglunteer_view/screens/home_screen.dart';
 import 'package:boonglunteer_view/screens/profile_screen.dart';
 import 'package:boonglunteer_view/screens/start_screen.dart';
 import 'package:boonglunteer_view/widgets/bottom_container.dart';
