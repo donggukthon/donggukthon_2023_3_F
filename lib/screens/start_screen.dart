@@ -54,7 +54,12 @@ class _StartScreenState extends State<StartScreen> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context, CupertinoPageRoute(builder: (context) => const LoginScreen()));
+                  Navigator.push(
+                    context, 
+                    CupertinoPageRoute(
+                      builder: (context) => const LoginScreen()
+                    )
+                  );
                 },
                 child: const Text(
                   '시작하기',
