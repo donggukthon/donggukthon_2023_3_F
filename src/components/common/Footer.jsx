@@ -53,8 +53,14 @@ const StyledFooter = {
   background: "rgba(255, 255, 255, 0.30)",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
-  padding: "10px 30px",
+  justifyContent: "space-around",
+  padding: "10px  0px",
+  position: "fixed",
+  bottom: 0,
+  left: 0,
+  right: 0,
+  maxWidth: "390px", // 최대 너비 설정
+  margin: "0 auto", // 좌우 중앙 정렬
 };
 
 const IconButton = styled(Button)({
