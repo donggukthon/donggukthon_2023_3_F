@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import IconButton from "../common/IconButton";
+import {styled, Button} from "@mui/material";
 
 function Navbar() {
   return (
@@ -15,5 +15,12 @@ function Navbar() {
 const StyledNavbar = {
   margin: "30px 0px",
 };
+
+const IconButton = styled(Button)({
+  display: "flex",
+  textAlign: "center",
+  alignItems: "center",
+  color: "#989898",
+});
 
 export default Navbar;
