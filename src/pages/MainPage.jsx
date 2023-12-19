@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import presentRoot from "../assets/images/present.png";
-import GuildTemplate from '../components/UserGuide.jsx';
+import UserGuideWidget from '../components/UserGuideWidget.jsx';
 
 function MainPage() {
   return (
@@ -16,9 +16,11 @@ function MainPage() {
           and Donate!
         </text>
       </TextPart>
-      <WhiteBoxContainer>
-        <GuildTemplate></GuildTemplate>
-      </WhiteBoxContainer>
+      <WhiteBox>
+        <UserGuideWidgetContainer>
+          <UserGuideWidget />
+        </UserGuideWidgetContainer>
+      </WhiteBox>
       <StartButton>시작하기</StartButton>
     </>
   );
@@ -50,21 +52,23 @@ const TextPart = styled.div`
   }
 `;
 
-const WhiteBoxContainer = styled.div`
-  display: flex;
-  overflow-x: auto;
-  padding: 20px;
-`;
-
 const WhiteBox = styled.div`
   width: 250px;
   height: 250px;
   background-color: white;
   opacity: 60%;
   border-radius: 15px;
-  margin: auto auto 20px auto;
+  margin: 20px auto;
   position: relative;
-  z-index: 0;
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+`;
+
+// UserGuideWidget의 너비, 높이 조정
+const UserGuideWidgetContainer = styled.div`
+  width: 100%;
+  height: 100%;
 `;
 
 const StartButton = styled.button`
