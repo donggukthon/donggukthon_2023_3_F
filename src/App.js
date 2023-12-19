@@ -1,14 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import basicFont from './assets/fonts/NanumSquareRoundR.ttf';
-import titleFont from './assets/fonts/Jalnan2TTF.ttf';
-import MainPage from './pages/MainPage';
-import HomePage from './pages/HomePage';
-import CharityPage from './pages/CharityPage';
-import BadgePage from './pages/BadgePage';
-import MyPage from './pages/MyPage';
-import HistoryPage from './pages/HistoryPage';
-import DetailPage from './pages/DetailPage';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {createGlobalStyle} from "styled-components";
+import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
+import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
+import lineFont from './assets/fonts/RampartOne.ttf';
+import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
+import CharityPage from "./pages/CharityPage";
+import BadgePage from "./pages/BadgePage";
+import MyPage from "./pages/MyPage";
+import HistoryPage from "./pages/HistoryPage";
+import DetailPage from "./pages/DetailPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -18,14 +19,21 @@ const GlobalStyle = createGlobalStyle`
   font-style: normal;
 }
 
- @font-face {
-    font-family: 'titleFont';
-    src: local('titleFont'), url(${titleFont}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'titleFont';
+  src: local('titleFont'), url(${titleFont}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
- body {
+@font-face {
+  font-family: 'lineFont';
+  src: local('lineFont'), url(${lineFont}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
   font-family: 'basicFont';
   background-color: black;
   letter-spacing: -0.1px;
@@ -35,13 +43,12 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .layout{
-    max-width: 390px;
-    height: 720px;
-    background-color: #F5E9CF;
-    margin: 0 auto ;
-    overflow-y: scroll;
-    overflow-x: hidden;
-   
+  max-width: 390px;
+  height: 720px;
+  background-color: #F5E9CF;
+  margin: 0 auto ;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .layout::-webkit-scrollbar {
