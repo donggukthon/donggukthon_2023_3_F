@@ -78,14 +78,15 @@ const StartButton = styled.button`
   border: none;
   border-radius: 15px 15px 15px 15px;
   font-family: "Godo", sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   padding: auto 0 auto 0;
   box-shadow: 3px 3px 3px 0px gray;
   opacity: 90%;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   cursor: pointer;
   &:active,
