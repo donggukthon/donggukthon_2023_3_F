@@ -19,14 +19,21 @@ const GlobalStyle = createGlobalStyle`
   font-style: normal;
 }
 
- @font-face {
-    font-family: 'titleFont';
-    src: local('titleFont'), url(${titleFont}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'titleFont';
+  src: local('titleFont'), url(${titleFont}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
- body {
+@font-face {
+  font-family: 'lineFont';
+  src: local('lineFont'), url(${lineFont}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
   font-family: 'basicFont';
   background-color: black;
   letter-spacing: -0.1px;
@@ -36,13 +43,12 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .layout{
-    max-width: 390px;
-    height: 720px;
-    background-color: #F5E9CF;
-    margin: 0 auto ;
-    overflow-y: scroll;
-    overflow-x: hidden;
-   
+  max-width: 390px;
+  height: 720px;
+  background-color: #F5E9CF;
+  margin: 0 auto ;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .layout::-webkit-scrollbar {

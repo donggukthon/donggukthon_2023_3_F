@@ -1,27 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import presentRoot from '../assets/images/present.png';
+import React from "react";
+import styled from "styled-components";
+import presentRoot from "../assets/images/present.png";
+import UserGuideWidget from '../components/UserGuideWidget.jsx';
 
 function MainPage() {
-	return (
-		<>
-			<ImagePart>
-				<img src={presentRoot} width='180px' />
-			</ImagePart>
-			<TextPart>
-				<text>
-					Create Bread
-					<br />
-					and Donate!
-				</text>
-			</TextPart>
-			<WhiteBoxContainer>
-				<WhiteBox />
-				<WhiteBox />
-			</WhiteBoxContainer>
-			<StartButton>시작하기</StartButton>
-		</>
-	);
+  return (
+    <>
+      <ImagePart>
+        <img src={presentRoot} width="180px" padding="0" />
+      </ImagePart>
+      <TextPart>
+        <text>
+          Create Bread
+          <br />
+          and Donate!
+        </text>
+      </TextPart>
+      <WhiteBox>
+        <UserGuideWidgetContainer>
+          <UserGuideWidget />
+        </UserGuideWidgetContainer>
+      </WhiteBox>
+      <StartButton>시작하기</StartButton>
+    </>
+  );
 }
 
 const ImagePart = styled.div`
@@ -43,52 +45,48 @@ const TextPart = styled.div`
 	display: flex;
 	justify-content: center;
 
-	text {
-		font-family: 'Rampart One', sans-serif;
-		font-size: 30px;
-		font-weight: 700;
-	}
-
-	@font-face {
-		font-family: 'RampartOne';
-		font-style: normal;
-		font-weight: 400;
-		src: url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap') format('ttf');
-	}
-`;
-
-const WhiteBoxContainer = styled.div`
-	display: flex;
-	overflow-x: auto;
-	padding: 20px;
+  text {
+    font-family: "lineFont";
+    font-size: 30px;
+    font-weight: 700;
+  }
 `;
 
 const WhiteBox = styled.div`
-	width: 250px;
-	height: 250px;
-	background-color: white;
-	opacity: 60%;
-	border-radius: 15px;
-	margin: auto auto 20px auto;
-	position: relative;
-	z-index: 0;
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  opacity: 60%;
+  border-radius: 15px;
+  margin: 20px auto;
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+`;
+
+// UserGuideWidget의 너비, 높이 조정
+const UserGuideWidgetContainer = styled.div`
+  width: 100%;
+  height: 100%;
 `;
 
 const StartButton = styled.button`
-	width: 250px;
-	height: 45px;
-	background: var(--button-bg-color, #ed3333);
-	border: none;
-	border-radius: 15px 15px 15px 15px;
-	font-family: 'Godo', sans-serif;
-	font-size: 20px;
-	color: white;
-	margin: 0 auto 0 auto;
-	padding: auto 0 auto 0;
-	box-shadow: 3px 3px 3px 0px gray;
-	opacity: 90%;
-	display: flex;
-	justify-content: center;
+  width: 250px;
+  height: 45px;
+  background: var(--button-bg-color, #ed3333);
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+  font-family: "Godo", sans-serif;
+  font-size: 17px;
+  color: white;
+  margin: 0 auto;
+  padding: auto 0 auto 0;
+  box-shadow: 3px 3px 3px 0px gray;
+  opacity: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 	cursor: pointer;
 	&:active,
