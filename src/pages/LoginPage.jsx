@@ -3,25 +3,23 @@ import styled from "styled-components";
 import snowmanRoot from "../assets/images/snowman_tree.png";
 import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
+import Navbar from "../components/common/Navbar";
 
 function LoginPage() {
   return (
     <>
+      <Navbar />
       <SnowmanImage>
-        <img src={snowmanRoot} width="200px"/>
+        <img src={snowmanRoot} width="200px" />
       </SnowmanImage>
       <WhiteBox>
         <TextPart>
-          <text>
-            Create Yout Account!
-          </text>
+          <text>Create Yout Account!</text>
         </TextPart>
       </WhiteBox>
-      <LoginButton>
-        <image><img src={kakaologinRoot} width='220px'/></image>
-      </LoginButton>
+      <LoginButton></LoginButton>
       <GloveImage>
-        <img src={gloveRoot} width="200px"/>
+        <img src={gloveRoot} width="200px" />
       </GloveImage>
     </>
   );
@@ -29,7 +27,7 @@ function LoginPage() {
 
 const SnowmanImage = styled.div`
   background-color: none;
-  margin: 60px 0 0 60px;
+  margin: 30px 0 0 30px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -38,7 +36,7 @@ const SnowmanImage = styled.div`
 
 const GloveImage = styled.div`
   background-color: none;
-  margin: 15px 0 0 180px;
+  margin: -50px 0 0 180px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -49,14 +47,14 @@ const TextPart = styled.div`
   border: none;
   position: relative;
   display: flex;
-  margin-top: 30px;
+  margin-top: 40px;
 
   text {
     font-family: "niceFont";
     font-size: 20px;
     font-weight: 700;
     // 이거 왜 색깔 적용이 안될까요 언니 ...
-    /* color: black; */
+    color: black;
   }
 `;
 
@@ -66,7 +64,7 @@ const WhiteBox = styled.div`
   background-color: white;
   opacity: 60%;
   border-radius: 15px;
-  margin: 220px auto 0 auto;
+  margin: 190px auto 0 auto;
   position: relative;
   /* overflow-x: auto; */
   display: flex;

@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {createGlobalStyle} from "styled-components";
 import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
-import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
+import titleFont from "./assets/fonts/netmarbleM.ttf";
 import lineFont from "./assets/fonts/RampartOne.ttf";
 import niceFont from './assets/fonts/VollkornSCR.ttf';
 import descriptFont from './assets/fonts/DMSans.ttf';
@@ -63,7 +63,7 @@ body {
 .layout{
   max-width: 390px;
   height: 720px;
-  background-color: #F5E9CF;
+  background-color: #F3EEE2;
   margin: 0 auto ;
   overflow-y: scroll;
   overflow-x: hidden;
