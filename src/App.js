@@ -1,15 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import basicFont from './assets/fonts/NanumSquareRoundR.ttf';
-import titleFont from './assets/fonts/Jalnan2TTF.ttf';
-import MainPage from './pages/MainPage';
-import HomePage from './pages/HomePage';
-import CharityPage from './pages/CharityPage';
-import BadgePage from './pages/BadgePage';
-import MyPage from './pages/MyPage';
-import HistoryPage from './pages/HistoryPage';
-import DetailPage from './pages/DetailPage';
-import LoginPage from './pages/LoginPage';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {createGlobalStyle} from "styled-components";
+import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
+import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
+import lineFont from "./assets/fonts/RampartOne.ttf";
+import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
+import CharityPage from "./pages/CharityPage";
+import BadgePage from "./pages/BadgePage";
+import MyPage from "./pages/MyPage";
+import HistoryPage from "./pages/HistoryPage";
+import DetailPage from "./pages/DetailPage";
+import LoginPage from "./pages/LoginPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -61,23 +62,23 @@ body {
 `;
 
 function App() {
-	return (
-		<BrowserRouter>
-			<GlobalStyle />
-			<div className='layout'>
-				<Routes>
-					<Route path='/' element={<MainPage />} />
-					<Route path='/login' element={<LoginPage />} />
-					<Route path='/home' element={<HomePage />} />
-					<Route path='/charity' element={<CharityPage />} />
-					<Route path='/badge' element={<BadgePage />} />
-					<Route path='/profile' element={<MyPage />} />
-					<Route path='/history' element={<HistoryPage />} />
-					<Route path='/detail' element={<DetailPage />} />
-				</Routes>
-			</div>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <GlobalStyle />
+      <div className="layout">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/charity" element={<CharityPage />} />
+          <Route path="/badge" element={<BadgePage />} />
+          <Route path="/profile" element={<MyPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/detail" element={<DetailPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
