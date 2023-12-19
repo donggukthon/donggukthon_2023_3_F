@@ -1,6 +1,7 @@
 import React from "react";
 import {useNavigate, useLocation} from "react-router-dom";
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 import presentRoot from "../assets/images/present.png";
 import UserGuideWidget from "../components/UserGuideWidget";
 
@@ -81,7 +82,7 @@ const StartButton = styled.button`
   height: 45px;
   background: var(--button-bg-color, #ed3333);
   border: none;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 15px;
   font-family: "Godo", sans-serif;
   font-size: 17px;
   color: white;

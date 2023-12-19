@@ -1,122 +1,105 @@
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { Grid, styled, Button } from '@mui/material';
-import LoginModal from '../components/LoginModal';
-import StartModal from '../components/StartModal';
+import React from "react";
+import styled from "styled-components";
+import snowmanRoot from "../assets/images/snowman_tree.png";
+import kakaologinRoot from "../assets/images/kakao_login.png";
+import gloveRoot from "../assets/images/glove.png";
 
 function LoginPage() {
-	const [loginMessage, setLoginMessage] = useState();
-	const [startMessage, setStartMessage] = useState();
-	const [openLoginModal, setOpenLoginModal] = useState();
-	const [openStartModal, setOpenStartModal] = useState();
-
-	const navigate = useNavigate();
-	const location = useLocation();
-	const queryParams = new URLSearchParams(location.search);
-
-	useEffect(() => {
-		const name = queryParams.get('name');
-		const fromHomeButton = queryParams.get('fromHomeButton');
-
-		if (name && fromHomeButton !== 'true') {
-			setLoginMessage(` ${name}님! 로그인에 성공하셨습니다.`);
-			setOpenLoginModal(true);
-		}
-	}, [location.search]);
-
-	const onClickStart = async () => {
-		const name = queryParams.get('name');
-		if (!name) {
-			setStartMessage('로그인 후 이용해주세요.');
-			setOpenStartModal(true);
-			return;
-		}
-		navigate(`/portfolio${location.search}`, {
-			state: { name },
-		});
-	};
-
-	const Login = async () => {
-		window.location.href = 'http://localhost:8080/accounts/google/login/finish';
-	};
-
-	const closeLoginModal = () => {
-		setOpenLoginModal(false);
-	};
-
-	const closeStartModal = () => {
-		setOpenStartModal(false);
-	};
-
-	return (
-		<>
-			<StartModal open={openStartModal} handleClose={closeStartModal} message={startMessage} />
-			<LoginModal open={openLoginModal} handleClose={closeLoginModal} message={loginMessage} />
-			<Grid
-				sx={{
-					width: '100%',
-					height: '100vh',
-					backgroundSize: 'cover',
-					display: 'flex',
-					flexDirection: 'row',
-				}}>
-				<Section>
-					<div style={{ fontSize: '24px', fontWeight: 600 }}>주식 초보자들을 위한 배당금 수익 예측 서비스</div>
-					<div style={{ fontFamily: 'Pacifico', fontSize: '48px', letterSpacing: '2.88px', fontWeight: 800 }}>
-						Bulls & Bears
-					</div>
-					<div style={{ fontSize: '18px', letterSpacing: '1.08px' }}>
-						신뢰할 수 있는 금융데이터를 기반으로 <br />
-						주식 초보자를 위한 서비스를 제공합니다.
-					</div>
-					<div style={ButtonStyle}>
-						<MainButton
-							sx={{
-								background: '#fff',
-								color: '#293782',
-								'&:hover': {
-									background: '#fff',
-								},
-							}}
-							onClick={onClickStart}>
-							시작하기
-						</MainButton>
-						<StyledButton onClick={() => Login()}>로그인하기</StyledButton>
-					</div>
-				</Section>
-
-				<Grid>
-					<div>메인아이콘</div>
-				</Grid>
-			</Grid>
-		</>
-	);
+  return (
+    <>
+      <SnowmanImage>
+        <img src={snowmanRoot} width="200px"/>
+      </SnowmanImage>
+      <WhiteBox>
+        <TextPart>
+          <text>
+            Create Yout Account!
+          </text>
+        </TextPart>
+      </WhiteBox>
+      <LoginButton>
+        <image><img src={kakaologinRoot} width='220px'/></image>
+      </LoginButton>
+      <GloveImage>
+        <img src={gloveRoot} width="200px"/>
+      </GloveImage>
+    </>
+  );
 }
 
-const Section = styled(Grid)(() => ({
-	display: 'flex',
-	flexDirection: 'column',
-	padding: '190px 0px 0px 100px',
-	color: '#FFFFFF',
-}));
+const SnowmanImage = styled.div`
+  background-color: none;
+  margin: 60px 0 0 60px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+`;
 
-const ButtonStyle = {
-	display: 'flex',
-	gap: 28,
-	paddingTop: 20,
-};
+const GloveImage = styled.div`
+  background-color: none;
+  margin: 15px 0 0 180px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+`;
 
-const MainButton = styled(Button)(() => ({
-	width: 120,
-	padding: '10px',
-	borderRadius: 50,
-}));
-const StyledButton = styled(Button)(() => ({
-	width: 120,
-	padding: '10px',
-	borderRadius: 50,
-	color: '#fff',
-	border: '1px solid #fff',
-}));
+const TextPart = styled.div`
+  border: none;
+  position: relative;
+  display: flex;
+  margin-top: 30px;
+
+  text {
+    font-family: "niceFont";
+    font-size: 20px;
+    font-weight: 700;
+    // 이거 왜 색깔 적용이 안될까요 언니 ...
+    /* color: black; */
+  }
+`;
+
+const WhiteBox = styled.div`
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  opacity: 60%;
+  border-radius: 15px;
+  margin: 220px auto 0 auto;
+  position: relative;
+  /* overflow-x: auto; */
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+`;
+
+const LoginButton = styled.button`
+  width: 220px;
+  height: 35px;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Godo", sans-serif;
+  font-size: 17px;
+  color: white;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 350px;
+  left: 393px;
+
+  cursor: pointer;
+  &:active,
+  &:hover {
+    /* opacity: 100%; */
+  }
+
+  image {
+    z-index: 1;
+  }
+`;
 
 export default LoginPage;
