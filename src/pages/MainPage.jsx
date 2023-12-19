@@ -7,9 +7,11 @@ import UserGuideWidget from "../components/UserGuideWidget";
 
 function MainPage() {
   const navigate = useNavigate();
+
   const onClickStart = () => {
     navigate("/login");
   };
+
   return (
     <>
       <ImagePart>
