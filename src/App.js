@@ -4,6 +4,7 @@ import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
 import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
 import lineFont from "./assets/fonts/RampartOne.ttf";
 import niceFont from './assets/fonts/VollkornSCR.ttf';
+import descriptFont from './assets/fonts/DMSans.ttf';
 import MainPage from "./pages/MainPage";
 import HomePage from "./pages/HomePage";
 import CharityPage from "./pages/CharityPage";
@@ -12,7 +13,7 @@ import MyPage from "./pages/MyPage";
 import HistoryPage from "./pages/HistoryPage";
 import DetailPage from "./pages/DetailPage";
 import LoginPage from "./pages/LoginPage";
-import LoginPage from "./pages/LoginPage";
+import AccountPage from "./pages/AccountPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -39,6 +40,13 @@ const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'niceFont';
   src: local('niceFont'), url(${niceFont}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'descriptFont';
+  src: local('descriptFont'), url(${descriptFont}) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,6 +88,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="/charity" element={<CharityPage />} />
           <Route path="/badge" element={<BadgePage />} />
           <Route path="/profile" element={<MyPage />} />
