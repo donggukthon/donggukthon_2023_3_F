@@ -27,23 +27,23 @@ function MainPage() {
 }
 
 const ImagePart = styled.div`
-  background-color: none;
-  border-radius: 100px;
-  margin: 30px 0 0 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
+	background-color: none;
+	border-radius: 100px;
+	margin: 30px 0 0 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
 
-  img {
-    margin: 0 auto 0 auto;
-  }
+	img {
+		margin: 0 auto 0 auto;
+	}
 `;
 
 const TextPart = styled.div`
-  border: none;
-  position: relative;
-  display: flex;
-  justify-content: center;
+	border: none;
+	position: relative;
+	display: flex;
+	justify-content: center;
 
   text {
     font-family: "lineFont";
@@ -88,19 +88,21 @@ const StartButton = styled.button`
   justify-content: center;
   align-items: center;
 
-  cursor: pointer;
-  &:active,
-  &:hover {
-    opacity: 100%;
-  }
+	cursor: pointer;
+	&:active,
+	&:hover {
+		opacity: 100%;
+	}
 
-  // 고도체
-  @font-face {
-    font-family: "Godo";
-    font-style: normal;
-    font-weight: 700;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
-  }
+	// 고도체
+	@font-face {
+		font-family: 'Godo';
+		font-style: normal;
+		font-weight: 700;
+		src:
+			url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'),
+			url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+	}
 `;
 
 export default MainPage;

@@ -61,22 +61,22 @@ body {
 `;
 
 function App() {
-  return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <div className="layout">
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/charity" element={<CharityPage />} />
-          <Route path="/badge" element={<BadgePage />} />
-          <Route path="/profile" element={<MyPage />} />
-          <Route path="/history" element={<HistoryPage />} />
-          <Route path="/detail" element={<DetailPage />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<GlobalStyle />
+			<div className='layout'>
+				<Routes>
+					<Route path='/' element={<MainPage />} />
+					<Route path='/home' element={<HomePage />} />
+					<Route path='/charity' element={<CharityPage />} />
+					<Route path='/badge' element={<BadgePage />} />
+					<Route path='/profile' element={<MyPage />} />
+					<Route path='/history' element={<HistoryPage />} />
+					<Route path='/detail' element={<DetailPage />} />
+				</Routes>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
