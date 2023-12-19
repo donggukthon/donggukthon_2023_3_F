@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from '../components/common/Navbar';
 import SelectWidget from "../components/AccountSelectWidget";
 import { useNavigate } from "react-router-dom";
 
 function AccountPage() {
+  // 요일 선택 페이지로 이동
   const navigate = useNavigate();
-
   const onClickNext = () => {
     navigate("/day");
+  };
+
+  // 예금주명 input 칸 문자열 설정
+  const [accountHolderName, setAccountHolderName] = useState("예금주명을 입력하세요");
+  // 계좌번호 input 칸 문자열 설정
+  const [accountNumber, setAccountNumber] = useState("계좌번호를 입력하세요");
+  // 예금주명 input 클릭 시 값을 초기화하는 함수
+  const HolderNameInputClick = () => {
+    setAccountHolderName(""); // 현재 입력값을 초기화
+  };
+  // 계좌번호 input 클릭 시 값을 초기화하는 함수
+  const AccountNameInputClick = () => {
+    setAccountNumber(""); // 현재 입력값을 초기화
   };
 
   return (
@@ -22,8 +35,13 @@ function AccountPage() {
         </CommentPart>
 
         <FixedText>예금주명</FixedText>
-        <UserInputPart>
-        </UserInputPart>
+        <UserInputPart
+          value={accountHolderName}
+          onChange={
+            (e) => setAccountHolderName(e.target.value)
+          }
+          onClick={HolderNameInputClick}
+        />
 
         <FixedText>은행 선택</FixedText>
         <UserInputBox>
@@ -32,9 +50,14 @@ function AccountPage() {
           </SelectWidgetWrapper>
         </UserInputBox>
 
-        <FixedText>계좌 번호</FixedText>
-        <UserInputPart>
-        </UserInputPart>
+        <FixedText>계좌번호</FixedText>
+        <UserInputPart
+          value={accountNumber}
+          onChange={
+            (e) => setAccountNumber(e.target.value)
+          }
+          onClick={AccountNameInputClick}
+        />
       </PageState>
       <StartButton onClick={onClickNext}>다음</StartButton>
     </>
@@ -52,6 +75,7 @@ const CommentPart = styled.div`
   border: none;
   position: relative;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 30px;
   text {
     font-family: "niceFont";
@@ -73,7 +97,7 @@ const FixedText = styled.div`
 const UserInputPart = styled.input`
   background-color: white;
   width: 310px;
-  height: 60px;
+  height: 55px;
   border: none;
   border-radius: 10px;
   opacity: 60%;
@@ -87,7 +111,7 @@ const UserInputBox = styled.div`
   align-items: center;
   background-color: white;
   width: 310px;
-  height: 60px;
+  height: 75px;
   border: none;
   border-radius: 10px;
   opacity: 60%;

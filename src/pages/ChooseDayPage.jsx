@@ -96,6 +96,7 @@ const CommentPart = styled.div`
   border: none;
   position: relative;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 30px;
   text {
     font-family: "niceFont";
@@ -116,7 +117,7 @@ const FixedBoldText = styled.div`
 
 const FixedText = styled.div`
   font-family: "descriptFont";
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 100;
   color: #4A453A;
   text-align: center;
