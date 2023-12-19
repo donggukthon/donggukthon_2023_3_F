@@ -1,6 +1,6 @@
 import React from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import {styled, Box, Grid, Button, Img} from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+import { styled, Box, Grid, Button, Img } from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 
@@ -8,11 +8,13 @@ function BadgePage() {
   return (
     <>
       <Navbar />
-      <Container sx={{lineHeight: 1.5}}>
+      <Container sx={{ lineHeight: 1.5 }}>
         <Title>Badge</Title>
         <div>지금까지 기부한 붕어빵을 통해 획득한 뱃지예요!</div>
         <div>각각의 뱃지를 터치하면 상세한 설명을 확인할 수 있어요</div>
-        <div style={{marginBottom: "30px"}}>앞으로 또 어떤 붕어빵을 획득할 수 있을까요?</div>
+        <div style={{ marginBottom: "30px" }}>
+          앞으로 또 어떤 붕어빵을 획득할 수 있을까요?
+        </div>
         <BadgeContainer>
           <Badge>뱃지1</Badge>
           <Badge>뱃지2</Badge>

@@ -1,13 +1,13 @@
-import React from "react";
-import LinearProgress from "@mui/material/LinearProgress";
+import React from 'react';
+import LinearProgress from '@mui/material/LinearProgress';
 
-function Progressbar({value}) {
-  return (
-    <>
-      <div>
-        <LinearProgress variant="determinate" value={value} />
-      </div>
-    </>
-  );
+function Progressbar({ value }) {
+	return (
+		<>
+			<div>
+				<LinearProgress variant='determinate' value={value} />
+			</div>
+		</>
+	);
 }
 export default Progressbar;
