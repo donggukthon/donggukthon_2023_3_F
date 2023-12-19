@@ -1,13 +1,184 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from '../components/common/Navbar';
 
 function ChooseDayPage() {
+  // 다음 페이지 이동
+  const navigate = useNavigate();
+  const onClickStart = () => {
+    navigate("/home");
+  };
+  
+  // 선택한 요일들 관리 
+  const [selectedDays, setSelectedDays] = useState([]);
+  const handleDayButtonClick = (day) => {
+    if (selectedDays.includes(day)) {
+      setSelectedDays(selectedDays.filter((selectedDay) => selectedDay !== day));
+    } else {
+      setSelectedDays([...selectedDays, day]);
+    }
+  };
+
   return (
     <>
       <Navbar />
+      <PageState>
+        <CommentPart>
+          <text>Share your warmth</text>
+          <br/>
+          <text>With our app</text>
+        </CommentPart>
+      </PageState>
+      <FixedBoldText>기부 요일 선택</FixedBoldText>
+      <FixedText>선택한 요일 22시에 계좌의  1000원 미만의<br/>자투리 금액이 기부됩니다! </FixedText>
+      <DayRow>
+      <DayButton
+        onClick={() => handleDayButtonClick("MON")}
+        selected={selectedDays.includes("MON")}
+      >
+        MON
+      </DayButton>
+      </DayRow>
+      <DayRow>
+        <DayButton
+          onClick={() => handleDayButtonClick("TUE")}
+          selected={selectedDays.includes("TUE")}
+        >
+          TUE
+        </DayButton>
+        <DayButton
+          onClick={() => handleDayButtonClick("WED")}
+          selected={selectedDays.includes("WED")}
+        >
+          WED
+        </DayButton>
+      </DayRow>
+      <DayRow>
+        <DayButton
+          onClick={() => handleDayButtonClick("THU")}
+          selected={selectedDays.includes("THU")}
+        >
+          THU
+        </DayButton>
+        <DayButton
+          onClick={() => handleDayButtonClick("FRI")}
+          selected={selectedDays.includes("FRI")}
+        >
+          FRI
+        </DayButton>
+        <DayButton
+          onClick={() => handleDayButtonClick("SAT")}
+          selected={selectedDays.includes("SAT")}
+        >
+          SAT
+        </DayButton>
+        <DayButton
+          onClick={() => handleDayButtonClick("SUN")}
+          selected={selectedDays.includes("SUN")}
+        >
+          SUN
+        </DayButton>
+      </DayRow>
+      <StartButton onClick={onClickStart}>시작하기</StartButton>
     </>
   );
 }
+
+const PageState = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+`;
+
+const CommentPart = styled.div`
+  border: none;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text {
+    font-family: "niceFont";
+    font-size: 30px;
+    font-weight: 700;
+    margin: auto;
+  }
+`;
+
+const FixedBoldText = styled.div`
+  font-family: "descriptBoldFont";
+  font-size: 18px;
+  font-weight: 100;
+  color: #4A453A;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const FixedText = styled.div`
+  font-family: "descriptFont";
+  font-size: 13px;
+  font-weight: 100;
+  color: #4A453A;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const DayButton = styled.button`
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  margin: 10px;
+  font-family: "descriptBoldFont";
+  font-size: 15px;
+  opacity: 80%;
+  background-color: ${({ selected }) => (selected ? "#EEBD53" : "white")};
+  cursor: pointer;
+
+  &:active,
+  &:hover {
+    background-color: #EEBD53;
+    opacity: 100%;
+  }
+`;
+
+const DayRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+const StartButton = styled.button`
+  width: 250px;
+  height: 45px;
+  background: var(--button-bg-color, #ed3333);
+  border: none;
+  border-radius: 15px;
+  font-family: "Godo", sans-serif;
+  font-size: 17px;
+  color: white;
+  margin: 50px auto 0 auto;
+  padding: auto 0 auto 0;
+  box-shadow: 3px 3px 3px 0px gray;
+  opacity: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  &:active,
+  &:hover {
+    opacity: 100%;
+  }
+
+  // 고도체
+  @font-face {
+    font-family: "Godo";
+    font-style: normal;
+    font-weight: 700;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
+  }
+`;
 
 export default ChooseDayPage;
