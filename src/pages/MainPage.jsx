@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import presentRoot from "../assets/images/present.png";
+import GuildTemplate from '../components/UserGuide.jsx';
 
 function MainPage() {
   return (
@@ -16,8 +17,7 @@ function MainPage() {
         </text>
       </TextPart>
       <WhiteBoxContainer>
-        <WhiteBox />
-        <WhiteBox />
+        <GuildTemplate></GuildTemplate>
       </WhiteBoxContainer>
       <StartButton>시작하기</StartButton>
     </>
@@ -44,16 +44,9 @@ const TextPart = styled.div`
   justify-content: center;
 
   text {
-    font-family: "Rampart One", sans-serif;
+    font-family: "lineFont";
     font-size: 30px;
     font-weight: 700;
-  }
-
-  @font-face {
-    font-family: "RampartOne";
-    font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap") format("ttf");
   }
 `;
 
