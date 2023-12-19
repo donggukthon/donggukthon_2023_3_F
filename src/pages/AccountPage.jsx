@@ -40,6 +40,7 @@ function AccountPage() {
     </>
   );
 }
+
 const PageState = styled.div`
   display: flex;
   flex-direction: column;
