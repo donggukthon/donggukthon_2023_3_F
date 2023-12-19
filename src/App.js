@@ -14,6 +14,7 @@ import HistoryPage from "./pages/HistoryPage";
 import DetailPage from "./pages/DetailPage";
 import LoginPage from "./pages/LoginPage";
 import AccountPage from "./pages/AccountPage";
+import ChooseDayPage from "./pages/ChooseDayPage";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -48,6 +49,13 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'descriptFont';
   src: local('descriptFont'), url(${descriptFont}) format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'descriptBoldFont';
+  src: local('descriptBoldFont'), url(${descriptFont}) format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -86,9 +94,10 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/day" element={<ChooseDayPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/account" element={<AccountPage />} />
           <Route path="/charity" element={<CharityPage />} />
           <Route path="/badge" element={<BadgePage />} />
           <Route path="/profile" element={<MyPage />} />
