@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 import Navbar from '../components/common/Navbar';
-import SelectWidget from "../components/AccountSelectWidget";
+import { Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import { useNavigate } from "react-router-dom";
+import SelectBank from "../components/SelectBank";
 
 function AccountPage() {
   // 요일 선택 페이지로 이동
@@ -45,9 +46,7 @@ function AccountPage() {
 
         <FixedText>은행 선택</FixedText>
         <UserInputBox>
-          <SelectWidgetWrapper>
-            <SelectWidget/>
-          </SelectWidgetWrapper>
+          <SelectBank />
         </UserInputBox>
 
         <FixedText>계좌번호</FixedText>
@@ -97,7 +96,7 @@ const FixedText = styled.div`
 const UserInputPart = styled.input`
   background-color: white;
   width: 310px;
-  height: 55px;
+  height: 60px;
   border: none;
   border-radius: 10px;
   opacity: 60%;
@@ -110,8 +109,8 @@ const UserInputBox = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 310px;
-  height: 75px;
+  width: 315px;
+  height: 60px;
   border: none;
   border-radius: 10px;
   opacity: 60%;
@@ -151,15 +150,6 @@ const StartButton = styled.button`
     font-weight: 700;
     src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
   }
-`;
-
-const SelectWidgetWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
 `;
 
 export default AccountPage;
