@@ -41,12 +41,12 @@ const TotalMoneyPart = styled.div`
 `;
 
 const WhiteBox = styled.div`
-  width: 270px;
-  height: 270px;
+  width: 250px;
+  height: 250px;
   background-color: white;
   opacity: 60%;
   border-radius: 15px;
-  margin: 25px auto;
+  margin: 15px auto;
   position: relative;
   overflow-x: auto;
   padding: 30px;
