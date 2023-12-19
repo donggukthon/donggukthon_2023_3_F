@@ -1,7 +1,6 @@
 import React from "react";
-import {useNavigate, useLocation} from "react-router-dom";
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from "react-router-dom";
 import presentRoot from "../assets/images/present.png";
 import UserGuideWidget from "../components/UserGuideWidget";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import {styled, Grid, Button, Img} from "@mui/material";
+import {useNavigate} from "react-router-dom";
+import {styled, Grid, Button} from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Charity1 from "../assets/images/children.png";
