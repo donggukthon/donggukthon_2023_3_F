@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { styled, Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
+import SelectBank from '../components/SelectBank';
 
 function MyPage() {
 	const navigate = useNavigate();
@@ -17,7 +18,7 @@ function MyPage() {
 		<>
 			<Navbar />
 			<Container>
-				<div style={{ margin: '0px 0px 5px 10px' }}>로그인 계정</div>
+				<div style={{ margin: '10px 0px 10px 10px' }}>로그인 계정</div>
 				<Bar>
 					<Grid sx={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
 						<div>이미지</div>
@@ -29,7 +30,7 @@ function MyPage() {
 				</Bar>
 			</Container>
 			<Container>
-				<div style={{ margin: '0px 0px 5px 10px' }}>계좌 정보 수정</div>
+				<div style={{ margin: '10px 0px 10px 10px' }}>계좌 정보 수정</div>
 				<Bar>
 					<GridTitle>예금주명</GridTitle>
 					<input
@@ -49,16 +50,9 @@ function MyPage() {
 							},
 						}}
 					/>
-					<GridTitle>은행명</GridTitle>
-					<FormControl fullWidth>
-						<InputLabel id='demo-simple-select-small-label'>은행명</InputLabel>
-						<Select labelId='demo-simple-select-small-label' id='demo-select-small'>
-							<MenuItem value={10}>하나은행</MenuItem>
-							<MenuItem value={20}>카카오뱅크</MenuItem>
-							<MenuItem value={30}>수협은행</MenuItem>
-						</Select>
-					</FormControl>
-					<GridTitle>계좌번호</GridTitle>
+					<GridTitle marginBottom='10px'>은행명</GridTitle>
+					<SelectBank />
+					<GridTitle marginTop='10px'>계좌번호</GridTitle>
 					<input
 						type='text'
 						disabled
