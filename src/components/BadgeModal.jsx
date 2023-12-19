@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Close from "@mui/icons-material/CloseRounded";
 import {styled, Box, Grid, Button, Img, Modal} from "@mui/material";
 
-function BadgeModal({isOpen, onClose, badgeName, badgeImage}) {
+function BadgeModal({isOpen, onClose, badgeName, badgeImage, badgeExplain}) {
   const acquiredDate = "2023년 01월 23일";
 
   return (
@@ -16,9 +16,9 @@ function BadgeModal({isOpen, onClose, badgeName, badgeImage}) {
           <Grid sx={{display: "flex", justifyContent: "center", textAlign: "center", alignItems: "center", marginTop: "15px"}}>
             <div style={{color: "rgba(0, 0, 0, 0.45)", fontSize: "14px"}}>{acquiredDate}에 취득하신 뱃지입니다!</div>
           </Grid>
-          <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-around", gap: "10px", padding: "40px 0px"}}>
+          <Box sx={{display: "flex", flexDirection: "row", justifyContent: "space-around", gap: "20px", padding: "40px 0px"}}>
             <img src={badgeImage} />
-            <Grid>뱃지에대한설명입니다.</Grid>
+            <Grid sx={{lineHeight: 1.4}}>{badgeExplain}</Grid>
           </Box>
         </ModalGrid>
       </Modal>
@@ -50,7 +50,7 @@ const ModalGrid = styled(Grid)(() => ({
   backgroundColor: "white",
   borderRadius: "31px",
   boxShadow: "0 10px 50px rgb(70, 70, 70)",
-  padding: "10px 30px 10px 30px",
+  padding: "10px 20px 10px 20px",
 }));
 
 export default BadgeModal;

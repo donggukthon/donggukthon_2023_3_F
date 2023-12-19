@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {useNavigate, useLocation} from "react-router-dom";
 import {styled, Grid, Button, Img} from "@mui/material";
 import Navbar from "../components/common/Navbar";
@@ -7,6 +7,7 @@ import Progressbar from "../components/Progressbar";
 import Mold from "../assets/images/mold.png";
 import Bread from "../assets/images/bread.png";
 import Ribbon from "../assets/images/ribbon_fishbread.png";
+import DonateModal from "../components/DonateModal";
 
 function Case1() {
   return (
@@ -31,6 +32,10 @@ function Case2() {
 }
 
 function Case3() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const onClickDonate = () => {
+    setIsModalOpen(true);
+  };
   return (
     <>
       <Grid sx={{margin: "20px 0px"}}>
@@ -38,7 +43,10 @@ function Case3() {
         <div>붕어빵을 선택하면 원하는 재단에 기부 할 수 있어요!</div>
         <div>마음을 전달하러 가볼까요?</div>
       </Grid>
-      <img src={Ribbon} />
+      <Button onClick={onClickDonate}>
+        <img src={Ribbon} />
+      </Button>
+      {isModalOpen && <DonateModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

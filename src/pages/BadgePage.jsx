@@ -15,10 +15,10 @@ import Badge9 from "../assets/images/badge9.png";
 
 function BadgePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedBadge, setSelectedBadge] = useState({name: "", image: null});
+  const [selectedBadge, setSelectedBadge] = useState({name: "", image: null, explain: ""});
 
-  const onClickBadge = (badgeName, badgeImage) => {
-    setSelectedBadge({name: badgeName, image: badgeImage});
+  const onClickBadge = (badgeName, badgeImage, badgeExplain) => {
+    setSelectedBadge({name: badgeName, image: badgeImage, explain: badgeExplain});
     setIsModalOpen(true);
   };
 
@@ -28,53 +28,64 @@ function BadgePage() {
       <Container sx={{lineHeight: 1.5}}>
         <Title>Badge</Title>
         <div>지금까지 기부한 붕어빵을 통해 획득한 뱃지예요!</div>
-        <div>각각의 뱃지를 터치하면 상세한 설명을 확인할 수 있어요</div>
+        <div>뱃지를 터치하면 상세한 설명을 확인할 수 있어요</div>
         <div style={{marginBottom: "30px"}}>앞으로 또 어떤 붕어빵을 획득할 수 있을까요?</div>
         <BadgeContainer>
-          <Badge onClick={() => onClickBadge("뱃지1", Badge1)}>
+          <Badge onClick={() => onClickBadge("달콤한 슈크림 붕어빵", Badge1, "따뜻한 슈크림과 바삭한 반죽의 조화로움으로 모두의 입맛을 사로잡습니다")}>
             <img src={Badge1} />
-            <BadgeNameGrid>뱃지1</BadgeNameGrid>
+            <BadgeNameGrid>
+              달콤한 <br />
+              슈크림 붕어빵
+            </BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지2", Badge2)}>
+          <Badge onClick={() => onClickBadge("부드러운 팥 붕어빵", Badge2, "붕어빵의 원조는 역시 팥 붕어빵! 사람들에게 환한 에너지를 전해줍니다")}>
             <img src={Badge2} />
-            <BadgeNameGrid>뱃지2</BadgeNameGrid>
+            <BadgeNameGrid>
+              부드러운 <br />팥 붕어빵
+            </BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지3", Badge3)}>
+          <Badge onClick={() => onClickBadge("새콤한 블루베리 붕어빵", Badge3, "신선한 블루베리로 만든 붕어빵은 특유의 상큼한 맛으로 즐거운 경험을 선물해줍니다")}>
             <img src={Badge3} />
-            <BadgeNameGrid>뱃지3</BadgeNameGrid>
+            <BadgeNameGrid>
+              새콤한 블루베리 <br />
+              붕어빵
+            </BadgeNameGrid>
           </Badge>
         </BadgeContainer>
         <BadgeContainer>
-          <Badge onClick={() => onClickBadge("뱃지4", Badge4)}>
+          <Badge onClick={() => onClickBadge("깔끔한 꿀 붕어빵", Badge4, "깊은 꿀의 풍미가 적절히 녹아들어가 한 입 먹는 순간 입안 가득 향기가 퍼집니다")}>
             <img src={Badge4} />
-            <BadgeNameGrid>뱃지4</BadgeNameGrid>
+            <BadgeNameGrid>깔끔한 꿀 붕어빵</BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지5", Badge5)}>
+          <Badge onClick={() => onClickBadge("향긋한 고구마 붕어빵", Badge5, "따뜻한 감성이 들어간 고구마 붕어빵은 먹는 순간 마음까지 따뜻해집니다")}>
             <img src={Badge5} />
-            <BadgeNameGrid>뱃지5</BadgeNameGrid>
+            <BadgeNameGrid>향긋한 고구마 붕어빵</BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지6", Badge6)}>
+          <Badge onClick={() => onClickBadge("촉촉한 첫눈 붕어빵", Badge6, "겨울의 첫눈처럼 순수하고 행복한 느낌을 담은 첫눈 붕어빵을 사랑하는 사람과 나누어보세요")}>
             <img src={Badge6} />
-            <BadgeNameGrid>뱃지6</BadgeNameGrid>
+            <BadgeNameGrid>
+              촉촉한 첫눈 <br />
+              붕어빵
+            </BadgeNameGrid>
           </Badge>
         </BadgeContainer>
         <BadgeContainer>
-          <Badge onClick={() => onClickBadge("뱃지7", Badge7)}>
+          <Badge onClick={() => onClickBadge("포근한 산타 붕어빵", Badge7, "고요한 겨울 밤에 사랑과 기쁨을 전하는 특별한 붕어빵입니다")}>
             <img src={Badge7} />
-            <BadgeNameGrid>뱃지7</BadgeNameGrid>
+            <BadgeNameGrid>포근한 산타 붕어빵</BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지8", Badge8)}>
+          <Badge onClick={() => onClickBadge("담백한 루돌프 붕어빵", Badge8, "담백한 견과류가 들어간 루돌프 붕어빵은 따뜻한 붕어빵 내부에 겨울의 마법을 담고 있습니다")}>
             <img src={Badge8} />
-            <BadgeNameGrid>뱃지8</BadgeNameGrid>
+            <BadgeNameGrid>담백한 루돌프 붕어빵</BadgeNameGrid>
           </Badge>
-          <Badge onClick={() => onClickBadge("뱃지9", Badge9)}>
+          <Badge onClick={() => onClickBadge("고소한 눈사람 붕어빵", Badge9, "눈 내리는 날과 잘 어울리는 눈사람 붕어빵으로 그 날의 추억을 기억 해 보세요")}>
             <img src={Badge9} />
-            <BadgeNameGrid>뱃지9</BadgeNameGrid>
+            <BadgeNameGrid>고소한 눈사람 붕어빵</BadgeNameGrid>
           </Badge>
         </BadgeContainer>
       </Container>
       <Footer />
-      {isModalOpen && <BadgeModal isOpen={isModalOpen} badgeName={selectedBadge.name} badgeImage={selectedBadge.image} onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <BadgeModal isOpen={isModalOpen} badgeName={selectedBadge.name} badgeImage={selectedBadge.image} badgeExplain={selectedBadge.explain} onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }
@@ -104,13 +115,13 @@ const BadgeContainer = styled(Box)({
 const Badge = styled(Button)({
   display: "flex",
   flexDirection: "column",
-  gap: 15,
+  gap: 10,
   color: "#312e26",
   textAlign: "center",
   alignItems: "center",
-  width: "100px",
-  height: "120px",
-  padding: "13px",
+  width: "110px",
+  height: "125px",
+  padding: "13px 8px",
   borderRadius: "24px",
   border: "1px solid  var(--Blue-0, #EBECFD)",
   background: "var(--Offwhite, #FCFCFC)",
@@ -122,9 +133,9 @@ const Badge = styled(Button)({
 
 const BadgeNameGrid = styled(Grid)({
   color: "#312E26",
-  fontSize: "14px",
-  fontWeight: 500,
-  fontFamily: "titleFont",
+  fontSize: "13px",
+  fontWeight: 700,
+  fontFamily: "basicFont",
 });
 
 export default BadgePage;

@@ -1,72 +1,81 @@
-import Navbar from '../components/common/Navbar';
-import styled from 'styled-components';
-import Footer from "../components/common/Footer";
-import logo from '../assets/images/logo.png';
+import Navbar from "../components/common/Navbar";
+import {styled, Grid, Button} from "@mui/material";
+import logo from "../assets/images/logo.png";
 
 function HistoryPage() {
-	return (
-		<>
-			<Navbar />
-			<UserTextPart>김혜연 님이<br/>지금까지 전달한 마음이에요!</UserTextPart>
-			<TotalMoneyPart>
-				3,290 원
-				<br/>
-				<img src={logo} width='100px' alt='Fishbread' />
-			</TotalMoneyPart>
-			<WhiteBox>
-				<HistoryTitle>전체내역</HistoryTitle>
-				<br/>
-				<HistoryContent>2023-12-01 ㅇㅇㅇㅇ재단 ㅇㅇㅇㅇ원<br/><br/>2023-11-31  ㅁㅁㅁㅁ재단  ㅁㅁㅁㅁ원<br/><br/>...<br/><br/>...</HistoryContent>
-			</WhiteBox>
-			<Footer />
-		</>
-	);
+  const userName = "김혜연";
+  const totalDonateAmount = 3290;
+  const formattedTotalDonateAmount = totalDonateAmount.toLocaleString();
+  const donateData = [
+    {donateDate: "2023-12-18", donatePrice: 300},
+    {donateDate: "2023-11-24", donatePrice: 50},
+    {donateDate: "2023-12-10", donatePrice: 406},
+    {donateDate: "2023-12-08", donatePrice: 302},
+    {donateDate: "2023-12-06", donatePrice: 150},
+    {donateDate: "2023-12-04", donatePrice: 30},
+    {donateDate: "2023-12-02", donatePrice: 300},
+    {donateDate: "2023-11-31", donatePrice: 24},
+    {donateDate: "2023-11-29", donatePrice: 400},
+    {donateDate: "2023-06-30", donatePrice: 560},
+    {donateDate: "2023-12-01", donatePrice: 450},
+    {donateDate: "2023-11-24", donatePrice: 50},
+    {donateDate: "2023-11-10", donatePrice: 406},
+    {donateDate: "2023-10-21", donatePrice: 62},
+    {donateDate: "2023-10-11", donatePrice: 150},
+    {donateDate: "2023-09-30", donatePrice: 260},
+    {donateDate: "2023-09-15", donatePrice: 970},
+    {donateDate: "2023-08-20", donatePrice: 304},
+    {donateDate: "2023-07-19", donatePrice: 400},
+    {donateDate: "2023-06-30", donatePrice: 560},
+  ];
+
+  return (
+    <>
+      <Navbar />
+      <Grid
+        sx={{
+          lineHeight: 1.5,
+          fontSize: "22px",
+          color: "#312E26",
+          textAlign: "center",
+          margin: "20px 0",
+        }}
+      >
+        {userName}님이
+        <br />
+        지금까지 전달한 마음이에요!
+        <Grid sx={{fontFamily: "titleFont", marginTop: "30px", fontWeight: 700, fontSize: "28px"}}>{formattedTotalDonateAmount}원</Grid>
+        <img src={logo} width="100px" alt="Fishbread" />
+      </Grid>
+
+      <Grid sx={{marginLeft: "30px"}}>모금 내역</Grid>
+      <Container>
+        <Grid sx={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginBottom: "20px"}}>
+          <Grid sx={{fontFamily: "titleFont", fontSize: "18px", padding: "0px 10px"}}>날짜</Grid>
+          <Grid sx={{fontFamily: "titleFont", fontSize: "18px", padding: "0px 0px", marginLeft: "10px"}}>모금 금액</Grid>
+        </Grid>
+        {donateData.map((data, index) => (
+          <Grid sx={{display: "flex", flexDirection: "row", gap: "40px", marginBottom: "10px"}} key={index}>
+            <Grid sx={{display: "flex", flexDirection: "row", justifyContent: "flex-start", width: "165px", paddingLeft: "30px"}}>{data.donateDate}</Grid>
+            <Grid sx={{display: "flex", justifyContent: "flex-end"}}>{data.donatePrice.toLocaleString()}원</Grid>
+          </Grid>
+        ))}
+      </Container>
+    </>
+  );
 }
 
-const UserTextPart = styled.div`
-  font-family: "descriptFont";
-  font-size: 25px;
-  font-weight: 100;
-  color: #4A453A;
-	text-align: center;
-	margin: 20px 0;
-`;
-
-const TotalMoneyPart = styled.div`
-  font-family: "descriptBoldFont";
-  font-size: 30px;
-  font-weight: 100;
-  color: #4A453A;
-	text-align: center;
-`;
-
-const WhiteBox = styled.div`
-  width: 250px;
-  height: 250px;
-  background-color: white;
-  opacity: 60%;
-  border-radius: 15px;
-  margin: 15px auto;
-  position: relative;
-  overflow-x: auto;
-  padding: 30px;
-	opacity: 40%;
-`;
-
-const HistoryTitle = styled.div`
-  font-family: "descriptFont";
-  font-size: 21px;
-  font-weight: 100;
-  color: black;
-	margin: 20px 0;
-`;
-
-const HistoryContent = styled.div`
-	font-family: "descriptFont";
-  font-size: 16px;
-  font-weight: 100;
-  color: #4A453A;
-	margin: 15px 0;
-`;
+const Container = styled(Grid)({
+  height: "320px",
+  fontSize: "14px",
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "white",
+  opacity: "60%",
+  borderRadius: "15px",
+  margin: "7px 20px",
+  overflowY: "scroll",
+  padding: "20px 20px 10px 20px",
+});
 
 export default HistoryPage;
