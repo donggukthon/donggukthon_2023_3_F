@@ -1,9 +1,47 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { styled, Grid, Button } from '@mui/material';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { styled, Grid, Button, Img } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import Progressbar from '../components/Progressbar';
+import Mold from '../assets/images/mold.png';
+import Bread from '../assets/images/bread.png';
+import Ribbon from '../assets/images/ribbon_fishbread.png';
+
+function Case1() {
+	return (
+		<>
+			<Grid sx={{ margin: '20px 0px' }}>
+				<div>아직 반죽 상태의 붕어빵이예요</div>
+			</Grid>
+			<img src={Bread} />
+		</>
+	);
+}
+
+function Case2() {
+	return (
+		<>
+			<Grid sx={{ margin: '20px 0px' }}>
+				<div>붕어빵이 구워지고 있어요!</div>
+			</Grid>
+			<img src={Mold} />
+		</>
+	);
+}
+
+function Case3() {
+	return (
+		<>
+			<Grid sx={{ margin: '20px 0px' }}>
+				<div>붕어빵이 완성되었네요!</div>
+				<div>붕어빵을 선택하면 원하는 재단에 기부 할 수 있어요!</div>
+				<div>마음을 전달하러 가볼까요?</div>
+			</Grid>
+			<img src={Ribbon} />
+		</>
+	);
+}
 
 function HomePage() {
 	const navigate = useNavigate();
@@ -11,6 +49,15 @@ function HomePage() {
 	const totalAmount = 3290;
 	const formattedTotalAmount = totalAmount.toLocaleString();
 	const progress = 50;
+	let container;
+
+	if (totalAmount <= 1000) {
+		container = <Case1 />;
+	} else if (totalAmount <= 2000) {
+		container = <Case2 />;
+	} else {
+		container = <Case3 />;
+	}
 
 	const onClickBtn = () => {
 		navigate('/history');
@@ -24,8 +71,8 @@ function HomePage() {
 					<Progressbar value={progress} />
 				</div>
 				<Title>{day}일차</Title>
-				<div style={{ margin: '10px 0px' }}>무슨무슨재단</div>
-				<div style={{ margin: '10px 0px' }}>현재까지 모인 금액</div>
+				<div style={{ margin: '3px' }}> ㅇㅇㅇ재단</div>
+				<div style={{ margin: '20px 0px' }}>{container}</div>
 				<Title>{formattedTotalAmount}원</Title>
 				<Button
 					onClick={onClickBtn}

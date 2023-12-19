@@ -6,7 +6,9 @@ function Navbar() {
 	return (
 		<>
 			<div style={StyledNavbar}>
-				<IconButton children={<ArrowBackIosNewIcon />} />
+				<IconButton>
+					<ArrowBackIosNewIcon />
+				</IconButton>
 			</div>
 		</>
 	);
