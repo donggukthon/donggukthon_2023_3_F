@@ -4,11 +4,11 @@ import {styled, Grid, Button, Img} from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Fishbread from "../assets/images/basic_fishbread.png";
+import Building from "../assets/images/building.png";
 
 function DetailPage() {
   const location = useLocation();
-  const charityName = location.state;
-  const charityImage = location.state;
+  const {charityName, charityImage} = location.state;
   const fishbreadAmount = 129;
   return (
     <>
@@ -27,7 +27,20 @@ function DetailPage() {
           </div>
           <div>연말동안 여러분의 따뜻한 마음을 전달해보세요!</div>
         </Grid>
-        <img src={charityImage} />
+        <Grid
+          sx={{
+            display: "flex",
+            paddingTop: "170px",
+            justifyContent: "flex-end",
+            height: "325px",
+            background: `URL(${Building})`,
+            backgroundSize: "600px",
+            backgroundPosition: "bottom",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <img style={{marginRight: "10px"}} src={charityImage} />
+        </Grid>
       </Container>
     </>
   );
@@ -39,7 +52,7 @@ const Container = styled(Grid)({
 });
 
 const Title = styled(Grid)({
-  margin: "40px 0px",
+  margin: "20px 0px",
   textAlign: "center",
   alignItems: "center",
   color: "#312E26",

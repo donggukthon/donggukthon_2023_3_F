@@ -12,7 +12,7 @@ function CharityPage() {
   const navigate = useNavigate();
 
   const onClickedCharity = (charityName, charityImage) => {
-    navigate("/detail", {state: charityName, charityImage});
+    navigate("/detail", {state: {charityName, charityImage}});
   };
   return (
     <>
@@ -24,13 +24,13 @@ function CharityPage() {
         <CharityContainer>
           <Grid sx={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center"}}>
             <Charity onClick={() => onClickedCharity("어린이", Charity1)}>
-              <img src={Charity1} />
+              <img style={{width: "100px", margin: "15px 0px 30px 10px"}} src={Charity1} />
             </Charity>
             <Text onClick={() => onClickedCharity("어린이", Charity1)}>어린이</Text>
           </Grid>
           <Grid sx={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center"}}>
             <Charity onClick={() => onClickedCharity("독거노인", Charity2)}>
-              <img src={Charity2} />
+              <img style={{width: "200px", margin: "30px 30px 20px 40px"}} src={Charity2} />
             </Charity>
             <Text onClick={() => onClickedCharity("독거노인", Charity2)}>독거노인</Text>
           </Grid>
@@ -39,13 +39,13 @@ function CharityPage() {
         <CharityContainer>
           <Grid sx={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center"}}>
             <Charity onClick={() => onClickedCharity("난민", Charity3)}>
-              <img src={Charity3} />
+              <img style={{width: "160px", margin: "40px 40px 30px 40px"}} src={Charity3} />
             </Charity>
             <Text onClick={() => onClickedCharity("난민", Charity3)}>난민</Text>
           </Grid>
           <Grid sx={{display: "flex", flexDirection: "column", textAlign: "center", alignItems: "center"}}>
             <Charity onClick={() => onClickedCharity("저소득층", Charity4)}>
-              <img src={Charity4} />
+              <img style={{width: "450px", margin: "0px 10px 0px 10px"}} src={Charity4} />
             </Charity>
             <Text onClick={() => onClickedCharity("저소득층", Charity4)}>저소득층</Text>
           </Grid>
@@ -62,7 +62,7 @@ const Container = styled(Grid)({
 });
 
 const Title = styled(Grid)({
-  margin: "40px 0px",
+  margin: "20px 0px",
   textAlign: "center",
   alignItems: "center",
   color: "#312E26",
@@ -100,9 +100,9 @@ const Text = styled(Button)({
   textAlign: "center",
   alignItems: "center",
   color: "#312e26",
-  fontSize: "20px",
+  fontSize: "16px",
   fontWeight: 600,
-  fontFamily: "titleFont",
+  fontFamily: "basicFont",
 });
 
 export default CharityPage;

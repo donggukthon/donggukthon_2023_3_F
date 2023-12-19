@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
-import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
+import titleFont from "./assets/fonts/netmarbleM.ttf";
 import lineFont from "./assets/fonts/RampartOne.ttf";
 import niceFont from "./assets/fonts/VollkornSCR.ttf";
 import MainPage from "./pages/MainPage";
