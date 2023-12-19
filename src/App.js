@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import basicFont from './assets/fonts/NanumSquareRoundR.ttf';
 import titleFont from './assets/fonts/Jalnan2TTF.ttf';
+import lineFont from './assets/fonts/RampartOne.ttf';
 import MainPage from './pages/MainPage';
 import HomePage from './pages/HomePage';
 import CharityPage from './pages/CharityPage';
