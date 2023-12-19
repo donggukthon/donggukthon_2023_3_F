@@ -71,7 +71,6 @@ function HomePage() {
 					<Progressbar value={progress} />
 				</div>
 				<Title>{day}일차</Title>
-				<div style={{ margin: '3px' }}> ㅇㅇㅇ재단</div>
 				<div style={{ margin: '20px 0px' }}>{container}</div>
 				<Title>{formattedTotalAmount}원</Title>
 				<Button

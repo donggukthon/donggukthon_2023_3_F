@@ -9,6 +9,7 @@ import BadgePage from './pages/BadgePage';
 import MyPage from './pages/MyPage';
 import HistoryPage from './pages/HistoryPage';
 import DetailPage from './pages/DetailPage';
+import LoginPage from './pages/LoginPage';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -60,6 +61,7 @@ function App() {
 			<div className='layout'>
 				<Routes>
 					<Route path='/' element={<MainPage />} />
+					<Route path='/login' element={<LoginPage />} />
 					<Route path='/home' element={<HomePage />} />
 					<Route path='/charity' element={<CharityPage />} />
 					<Route path='/badge' element={<BadgePage />} />

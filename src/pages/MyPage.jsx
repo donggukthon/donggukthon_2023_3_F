@@ -1,10 +1,18 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { styled, Grid, Button, Img } from '@mui/material';
+import { styled, Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 
 function MyPage() {
+	const navigate = useNavigate();
+	const userName = '김혜연';
+	const userAccount = '620-238849-937';
+
+	const onClickShow = () => {
+		navigate('/history');
+	};
+
 	return (
 		<>
 			<Navbar />
@@ -14,7 +22,7 @@ function MyPage() {
 					<Grid sx={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
 						<div>이미지</div>
 						<Grid sx={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-							<div style={{ color: 'black', fontSize: '18px', fontWeight: 600 }}>김혜연님</div>
+							<div style={{ color: 'black', fontSize: '18px', fontWeight: 600 }}>{userName}님</div>
 							<div style={{ fontSize: '14px' }}>hyeyeonismm@gmail.com</div>
 						</Grid>
 					</Grid>
@@ -23,16 +31,74 @@ function MyPage() {
 			<Container>
 				<div style={{ margin: '0px 0px 5px 10px' }}>계좌 정보 수정</div>
 				<Bar>
-					<div>예금주명</div>
-					<div>은행명</div>
-					<div>계좌번호</div>
+					<GridTitle>예금주명</GridTitle>
+					<input
+						type='text'
+						disabled
+						placeholder={userName}
+						style={{
+							background: 'transparent',
+							paddingLeft: '10px',
+							border: '1px solid #ddd',
+							margin: '10px 0px',
+							width: '286px',
+							height: '44px',
+							borderRadius: '6px',
+							'&:focus': {
+								border: '1px solid #ddd',
+							},
+						}}
+					/>
+					<GridTitle>은행명</GridTitle>
+					<FormControl fullWidth>
+						<InputLabel id='demo-simple-select-small-label'>은행명</InputLabel>
+						<Select labelId='demo-simple-select-small-label' id='demo-select-small'>
+							<MenuItem value={10}>하나은행</MenuItem>
+							<MenuItem value={20}>카카오뱅크</MenuItem>
+							<MenuItem value={30}>수협은행</MenuItem>
+						</Select>
+					</FormControl>
+					<GridTitle>계좌번호</GridTitle>
+					<input
+						type='text'
+						disabled
+						placeholder={userAccount}
+						style={{
+							paddingLeft: '10px',
+							background: 'transparent',
+							border: '1px solid #ddd',
+							margin: '10px 0px',
+							width: '286px',
+							height: '44px',
+							borderRadius: '6px',
+							'&:focus': {
+								border: '1px solid #ddd',
+							},
+						}}
+					/>
 				</Bar>
 			</Container>
 			<Container>
 				<div style={{ margin: '0px 0px 5px 10px' }}>기부 정보 수정</div>
 				<Bar>
-					<div>기부 요일</div>
-					<div>기부내역조회</div>
+					<GridTitle>기부 요일</GridTitle>
+					<GridTitle>기부내역조회</GridTitle>
+					<Button
+						onClick={onClickShow}
+						sx={{
+							color: '#fff',
+							margin: '10px 0px',
+							background: '#EEBD53',
+							borderRadius: '16px',
+							width: '280px',
+							height: '40px',
+							justifyContent: 'center',
+							'&:hover': {
+								background: '#EEBD53',
+							},
+						}}>
+						기부 내역 조회
+					</Button>
 				</Bar>
 				<Button
 					sx={{
@@ -46,8 +112,7 @@ function MyPage() {
 						'&:hover': {
 							background: 'rgba(237, 51, 51, 0.50)',
 						},
-					}}
-				>
+					}}>
 					수정하기
 				</Button>
 			</Container>
@@ -67,6 +132,11 @@ const Bar = styled(Grid)({
 	borderRadius: '30px',
 	background: 'rgba(255, 255, 255, 0.60)',
 	padding: '20px',
+});
+
+const GridTitle = styled(Grid)({
+	color: '#312e26',
+	fontFamily: 'titleFont',
 });
 
 export default MyPage;

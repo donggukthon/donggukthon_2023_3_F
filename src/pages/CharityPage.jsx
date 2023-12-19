@@ -7,8 +7,8 @@ import Footer from '../components/common/Footer';
 function CharityPage() {
 	const navigate = useNavigate();
 
-	const onClickedCharity = () => {
-		navigate('/detail');
+	const onClickedCharity = (charityName) => {
+		navigate('/detail', { state: charityName });
 	};
 	return (
 		<>
@@ -19,31 +19,31 @@ function CharityPage() {
 				<div>단체를 클릭하여 각 단체별 누적 기부 금액을 확인하세요!</div>
 				<CharityContainer>
 					<Grid sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', alignItems: 'center' }}>
-						<Charity onClick={onClickedCharity}>
+						<Charity onClick={() => onClickedCharity('어린이')}>
 							<div>이미지</div>
 						</Charity>
-						<Text onClick={onClickedCharity}>어린이</Text>
+						<Text onClick={() => onClickedCharity('어린이')}>어린이</Text>
 					</Grid>
 					<Grid sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', alignItems: 'center' }}>
-						<Charity onClick={onClickedCharity}>
+						<Charity onClick={() => onClickedCharity('독거노인')}>
 							<div>이미지</div>
 						</Charity>
-						<Text onClick={onClickedCharity}>독거노인</Text>
+						<Text onClick={() => onClickedCharity('독거노인')}>독거노인</Text>
 					</Grid>
 				</CharityContainer>
 
 				<CharityContainer>
 					<Grid sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', alignItems: 'center' }}>
-						<Charity onClick={onClickedCharity}>
+						<Charity onClick={() => onClickedCharity('난민')}>
 							<div>이미지</div>
 						</Charity>
-						<Text onClick={onClickedCharity}>난민</Text>
+						<Text onClick={() => onClickedCharity('난민')}>난민</Text>
 					</Grid>
 					<Grid sx={{ display: 'flex', flexDirection: 'column', textAlign: 'center', alignItems: 'center' }}>
-						<Charity onClick={onClickedCharity}>
+						<Charity onClick={() => onClickedCharity('저소득층')}>
 							<div>이미지</div>
 						</Charity>
-						<Text onClick={onClickedCharity}>저소득층</Text>
+						<Text onClick={() => onClickedCharity('저소득층')}>저소득층</Text>
 					</Grid>
 				</CharityContainer>
 			</Container>

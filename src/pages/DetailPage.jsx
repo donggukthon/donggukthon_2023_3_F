@@ -3,24 +3,30 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { styled, Grid, Button, Img } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
+import Fishbread from '../assets/images/basic_fishbread.png';
 
 function DetailPage() {
+	const location = useLocation();
+	const charityName = location.state;
 	const fishbreadAmount = 129;
 	return (
 		<>
 			<Navbar />
 			<Container>
-				<Title>저소득층</Title>
+				<Title>{charityName}</Title>
 				<Grid sx={{ lineHeight: 1.5, marginBottom: '40px' }}>
-					<div>총 {fishbreadAmount}마리의 붕어빵이 기부되었어요!</div>
+					<img src={Fishbread} />
+					<div style={{ fontSize: 18, fontWeight: 800, margin: '10px 0px 20px 0px' }}>
+						{charityName} 단체에 총 {fishbreadAmount}마리의
+						<br /> 붕어빵이 기부되었어요!
+					</div>
 					<div>
 						모인 붕어빵은 여러분의 이름으로 <br />
-						저소득층 단체에 기부됩니다
+						{charityName} 단체에 기부됩니다
 					</div>
 					<div>연말동안 여러분의 따뜻한 마음을 전달해보세요!</div>
 				</Grid>
 			</Container>
-			<Footer />
 		</>
 	);
 }
