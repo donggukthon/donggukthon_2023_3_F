@@ -1,10 +1,12 @@
-import React from "react";
+import {useNavigate, useLocation} from "react-router-dom";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
+import {Grid, Button, Img} from "@mui/material";
 import snowmanRoot from "../assets/images/snowman_tree.png";
 import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";
-
+import GoogleLogin from "../components/GoogleLogin";
 function LoginPage() {
   return (
     <>
@@ -17,7 +19,9 @@ function LoginPage() {
           <text>Create Yout Account!</text>
         </TextPart>
       </WhiteBox>
-      <LoginButton></LoginButton>
+      <LoginButton>
+        <GoogleLogin />
+      </LoginButton>
       <GloveImage>
         <img src={gloveRoot} width="200px" />
       </GloveImage>
