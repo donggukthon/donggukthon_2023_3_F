@@ -6,7 +6,7 @@ import snowmanRoot from "../assets/images/snowman_tree.png";
 import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";
-import GoogleLogin from "../components/GoogleLogin";
+import GoogleLoginButton from "../components/GoogleLogin";
 function LoginPage() {
   return (
     <>
@@ -20,7 +20,7 @@ function LoginPage() {
         </TextPart>
       </WhiteBox>
       <LoginButton>
-        <GoogleLogin />
+        <GoogleLoginButton />
       </LoginButton>
       <GloveImage>
         <img src={gloveRoot} width="200px" />
