@@ -1,15 +1,15 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {createGlobalStyle} from "styled-components";
-import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
-import titleFont from "./assets/fonts/Jalnan2TTF.ttf";
-import lineFont from './assets/fonts/RampartOne.ttf';
-import MainPage from "./pages/MainPage";
-import HomePage from "./pages/HomePage";
-import CharityPage from "./pages/CharityPage";
-import BadgePage from "./pages/BadgePage";
-import MyPage from "./pages/MyPage";
-import HistoryPage from "./pages/HistoryPage";
-import DetailPage from "./pages/DetailPage";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import basicFont from './assets/fonts/NanumSquareRoundR.ttf';
+import titleFont from './assets/fonts/Jalnan2TTF.ttf';
+import MainPage from './pages/MainPage';
+import HomePage from './pages/HomePage';
+import CharityPage from './pages/CharityPage';
+import BadgePage from './pages/BadgePage';
+import MyPage from './pages/MyPage';
+import HistoryPage from './pages/HistoryPage';
+import DetailPage from './pages/DetailPage';
+import LoginPage from './pages/LoginPage';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -67,6 +67,7 @@ function App() {
 			<div className='layout'>
 				<Routes>
 					<Route path='/' element={<MainPage />} />
+					<Route path='/login' element={<LoginPage />} />
 					<Route path='/home' element={<HomePage />} />
 					<Route path='/charity' element={<CharityPage />} />
 					<Route path='/badge' element={<BadgePage />} />

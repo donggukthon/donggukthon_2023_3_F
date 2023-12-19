@@ -50,17 +50,14 @@ function Footer() {
 }
 
 const StyledFooter = {
-	background: 'rgba(255, 255, 255, 0.30)',
+	background: '#f8efdd',
 	display: 'flex',
 	flexDirection: 'row',
 	justifyContent: 'space-around',
 	padding: '10px  0px',
-	position: 'fixed',
-	bottom: 0,
-	left: 0,
-	right: 0,
-	maxWidth: '390px', // 최대 너비 설정
-	margin: '0 auto', // 좌우 중앙 정렬
+
+	maxWidth: '390px',
+	margin: '0 auto',
 };
 
 const IconButton = styled(Button)({
