@@ -8,6 +8,7 @@ import Mold from "../assets/images/mold.png";
 import Bread from "../assets/images/bread.png";
 import Ribbon from "../assets/images/ribbon_fishbread.png";
 import DonateModal from "../components/DonateModal";
+import instance from "../api/axios";
 
 function Case1() {
   return (
@@ -53,10 +54,10 @@ function Case3() {
 
 function HomePage() {
   const navigate = useNavigate();
-  const day = 2;
-  const totalAmount = 3290;
+  const day = mainScreenData.since;
+  const totalAmount = mainScreenData.price;
   const formattedTotalAmount = totalAmount.toLocaleString();
-  const progress = 50;
+  const progress = (mainScreenData.price / 3000) * 100;
   let container;
 
   if (totalAmount <= 1000) {
@@ -70,6 +71,31 @@ function HomePage() {
   const onClickBtn = () => {
     navigate("/history");
   };
+  
+  // API 연결 -> 체크 필요
+  const handleMainSuccess = async () => {
+    try {
+      const response = await instance.get("/api/v1/fishbread");
+      console.log(response.data);
+
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
+
+  // 상태 관리
+  const [mainScreenData, setmainScreenData] = useState({
+    "fishbreads": {
+      "id": 1,
+      "price": 0,
+      "since": 1,
+      "image": null,
+    }
+  });
+
+  useEffect(() => {
+		handleMainSuccess();
+	}, []);
 
   return (
     <>

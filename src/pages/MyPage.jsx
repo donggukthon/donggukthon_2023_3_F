@@ -1,13 +1,46 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { styled, Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
+import logo from "../assets/images/logo.png";
+import instance from "../api/axios";
 
 function MyPage() {
 	const navigate = useNavigate();
-	const userName = '김혜연';
-	const userAccount = '620-238849-937';
+
+	// 상태 관리
+	const [userData, setUserData] = useState({
+		name: '김혜연 ',
+		account_num: '3333-84-1238352',
+		email: 'hyeyeonkim@naver.com',
+	});
+
+	// API 연결 -> 체크 필요
+	const handleAccountSuccess = async () => {
+		try {
+			const response = await instance.get("/api/v1/mypage");
+			console.log(response.data);
+
+			setUserData(response.data);	// 상태 업데이트
+		} catch (err) {
+			console.error("Error: ", err);
+		}
+	};
+
+	useEffect(() => {
+		handleAccountSuccess();
+	}, []);
+
+	const userName = userData.name;
+	const userAccount = userData.account_num;
+	const userEmail = userData.email;
+
+	// 은행 선택 칸 값 설정
+  const [bankValue, setBankValue] = useState('');
+	const selectedBank = (e) => {
+    setBankValue(e.target.value);
+  };
 
 	const onClickShow = () => {
 		navigate('/history');
@@ -27,10 +60,10 @@ function MyPage() {
 				<div style={{ margin: '10px 0px 10px 10px' }}>로그인 계정</div>
 				<Bar>
 					<Grid sx={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
-						<div>이미지</div>
+						<div><img src={logo} alt='logo' width='35px'/></div>
 						<Grid sx={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
 							<div style={{ color: 'black', fontSize: '18px', fontWeight: 600 }}>{userName}님</div>
-							<div style={{ fontSize: '14px' }}>hyeyeonismm@gmail.com</div>
+							<div style={{ fontSize: '14px' }}>{userEmail}</div>
 						</Grid>
 					</Grid>
 				</Bar>
@@ -62,6 +95,7 @@ function MyPage() {
             <Select 
               labelId='demo-simple-select-small-label' 
               id='demo-select-small'
+							onChange={selectedBank}
             >
               <MenuItem value={'하나'}>하나은행</MenuItem>
               <MenuItem value={'카카오뱅크'}>카카오뱅크</MenuItem>
@@ -100,7 +134,7 @@ function MyPage() {
 							margin: '10px 0px',
 							background: '#EEBD53',
 							borderRadius: '16px',
-							width: '280px',
+							width: '300px',
 							height: '40px',
 							justifyContent: 'center',
 							'&:hover': {
