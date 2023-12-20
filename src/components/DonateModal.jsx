@@ -5,9 +5,15 @@ import fishbread from "../assets/images/badge1.png";
 
 function DonateModal({isOpen, onClose}) {
   const [isYes, setIsYes] = useState(false);
+  const [isCharity, setIsCharity] = useState(null);
 
+  // 기부 여부 선택
   const IsYesButtonClicked = () => {
     setIsYes(true);
+  };
+
+  const WhatIsSelectedCharity = (selectedCharity) => {
+    setIsCharity(selectedCharity);
   };
 
   return (
@@ -17,7 +23,91 @@ function DonateModal({isOpen, onClose}) {
           <CloseButton
             onClick={onClose}
           />
-          <CommentPart>
+          {!isCharity 
+            ?
+            // 단체 선택 아직 안 했을 떄
+            <CommentPart>
+              <text>단체를 선택해주세요.</text>
+              <ButtonPart>
+                <Button
+                  onClick={() => WhatIsSelectedCharity('어린이')}
+                  sx={{
+                    margin: "10px 5px",
+                    background: "#ED3333",
+                    width: "260px",
+                    height: "50px",
+                    padding: "12px 20px",
+                    color: "white",
+                    borderRadius: "16px",
+                    fontSize: "15px",
+                    "&:hover": {
+                      background: "rgba(237, 51, 51, 0.50)",
+                    },
+                  }}
+                >
+                  어린이
+                </Button>
+                <Button
+                  onClick={() => WhatIsSelectedCharity('독거노인')}
+                  sx={{
+                    margin: "10px 5px",
+                    background: "#ED3333",
+                    width: "260px",
+                    height: "50px",
+                    padding: "12px 20px",
+                    color: "white",
+                    borderRadius: "16px",
+                    fontSize: "15px",
+                    "&:hover": {
+                      background: "rgba(237, 51, 51, 0.50)",
+                    },
+                  }}
+                >
+                  독거노인
+                </Button>
+              </ButtonPart>
+              <ButtonPart>
+                <Button
+                  onClick={() => WhatIsSelectedCharity('난민')}
+                  sx={{
+                    margin: "10px 5px",
+                    background: "#ED3333",
+                    width: "260px",
+                    height: "50px",
+                    padding: "12px 20px",
+                    color: "white",
+                    borderRadius: "16px",
+                    fontSize: "15px",
+                    "&:hover": {
+                      background: "rgba(237, 51, 51, 0.50)",
+                    },
+                  }}
+                >
+                  난민
+                </Button>
+                <Button
+                  onClick={() => WhatIsSelectedCharity('저소득층')}
+                  sx={{
+                    margin: "10px 5px",
+                    background: "#ED3333",
+                    width: "260px",
+                    height: "50px",
+                    padding: "12px 20px",
+                    color: "white",
+                    borderRadius: "16px",
+                    fontSize: "15px",
+                    "&:hover": {
+                      background: "rgba(237, 51, 51, 0.50)",
+                    },
+                  }}
+                >
+                  저소득층
+                </Button>
+              </ButtonPart>
+            </CommentPart>
+            :
+            // 단체 선택 시
+            <CommentPart>
             <text>{!isYes ? "기부하시겠습니까 ?" : "배지를 획득하셨습니다."}</text>
             <ImagePart>
               <img src={fishbread} alt='logo' width='60px'/>
@@ -85,6 +175,7 @@ function DonateModal({isOpen, onClose}) {
             </ButtonPart>
             }
           </CommentPart>
+          }
         </ModalGrid>
       </Modal>
     </>
