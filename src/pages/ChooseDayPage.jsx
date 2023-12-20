@@ -11,7 +11,7 @@ function ChooseDayPage() {
     // api 연결
     handleDaySuccess();
     // 화면 이동
-    // navigate("/home");
+    navigate("/home");
   };
   
   // 선택한 요일들 관리 
@@ -26,9 +26,8 @@ function ChooseDayPage() {
 
   // API 연결 -> 체크 필요
   // 1. 혹시 이 함수는 동기로 처리되어야 하는지 !
-  // 2. res 인자 안 받아도 될 것 같다는 생각이 ... 
-  // 3. API 명세에 작성되어 있는 것처럼 "date": selectedDays로 문자열로 작성해도 되는지 !
-  const handleDaySuccess = async (res) => {
+  // 3. "date": selectedDays로 문자열로 작성해도 되는지 !
+  const handleDaySuccess = async () => {
     try {
       const response = await instance.put("/api/v1/date", {
         "date": selectedDays,
