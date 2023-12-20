@@ -27,9 +27,7 @@ function AccountPage() {
   const [accountNumber, setAccountNumber] = useState("계좌번호를 입력하세요");
   // 은행 선택 칸 값 설정
   const [bankValue, setBankValue] = useState('');
-
   const selectedBank = (e) => {
-    e.preventDefault();
     setBankValue(e.target.value);
   };
   // 예금주명 input 클릭 시 값을 초기화하는 함수
@@ -47,9 +45,7 @@ function AccountPage() {
   };
 
   // API 연결 -> 체크 필요
-  // 1. 셋 다 string으로 넘어가는지 (체크 완료)
-  // 2. string: value 형태로 넣는 게 맞는지
-  const handleAccountSuccess = async (res) => {
+  const handleAccountSuccess = async () => {
     try {
       const response = await instance.put("/api/v1/bank", {
         "bankname": bankValue,
