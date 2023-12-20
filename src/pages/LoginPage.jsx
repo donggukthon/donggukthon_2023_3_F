@@ -25,7 +25,7 @@ function LoginPage() {
         <img src={snowmanRoot} width="200px" />
       </SnowmanImage>
 
-      <Grid sx={{width: "300px", height: "400px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "180px 40px 50px 40px"}}>
+      <Grid sx={{width: "300px", height: "400px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "160px 40px 50px 40px"}}>
         <Grid sx={{display: "flex", justifyContent: "center", textAlign: "center", margin: "50px 22px 0px 30px"}}>
           <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Sign in Your Account!</Grid>
         </Grid>
@@ -42,30 +42,32 @@ function LoginPage() {
           )} */}
         </Grid>
 
-        <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "flex-end"}}>
+        <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "flex-end", textAlign: "right", marginRight: "20px"}}>
           <Grid sx={{fontSize: "14px", marginTop: "2px", color: "#757575"}}>계정이 없으신가요?</Grid>
-          <Button sx={{color: "#B87514", fontSize: "14px", width: "90px"}} onClick={onClickSignup}>
+          <Button sx={{marginLeft: "190px", color: "#B87514", fontSize: "14px", width: "90px"}} onClick={onClickSignup}>
             회원가입
           </Button>
         </Grid>
-        <Button
-          onClick={onClickLogin}
-          sx={{
-            opacity: "100%",
-            margin: "0px 0px",
-            background: "#ED3333",
-            width: "180px",
-            height: "40px",
-            padding: "12px 60px",
-            color: "white",
-            borderRadius: "16px",
-            "&:hover": {
-              background: "rgba(237, 51, 51, 0.50)",
-            },
-          }}
-        >
-          로그인
-        </Button>
+        <Grid sx={{marginTop: "20px", display: "flex", justifyContent: "center", textAlign: "center"}}>
+          <Button
+            onClick={onClickLogin}
+            sx={{
+              opacity: "100%",
+              margin: "0px 0px",
+              background: "#ED3333",
+              width: "180px",
+              height: "40px",
+              padding: "12px 60px",
+              color: "white",
+              borderRadius: "16px",
+              "&:hover": {
+                background: "rgba(237, 51, 51, 0.50)",
+              },
+            }}
+          >
+            로그인
+          </Button>
+        </Grid>
       </Grid>
       <GloveImage>
         <img src={gloveRoot} width="200px" />
@@ -75,7 +77,7 @@ function LoginPage() {
 }
 
 const SnowmanImage = styled(Grid)({
-  margin: "30px 0px 0px 30px",
+  margin: "0px 0px 0px 30px",
   position: "absolute",
   display: "flex",
   justifyContent: "center",
@@ -83,7 +85,7 @@ const SnowmanImage = styled(Grid)({
 });
 
 const GloveImage = styled(Grid)({
-  margin: "-40px 0px 0px 180px",
+  margin: "-100px 0px 0px 180px",
   position: "absolute",
   display: "flex",
   justifyContent: "center",
