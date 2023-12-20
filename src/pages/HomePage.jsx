@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import {styled, Grid, Button, Img} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { styled, Grid, Button } from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Progressbar from "../components/Progressbar";
@@ -54,10 +54,6 @@ function Case3() {
 
 function HomePage() {
   const navigate = useNavigate();
-  const day = mainScreenData.since;
-  const totalAmount = mainScreenData.price;
-  const formattedTotalAmount = totalAmount.toLocaleString();
-  const progress = (mainScreenData.price / 3000) * 100;
   let container;
 
   if (totalAmount <= 1000) {
@@ -84,24 +80,45 @@ function HomePage() {
 
   // 상태 관리
   const [mainScreenData, setmainScreenData] = useState({
-    fishbreads: {
-      id: 1,
-      price: 0,
-      since: 1,
-      image: null,
-    },
+    "fishbreads": {
+      "id": 1,
+      "price": 2550,
+      "since": 3,
+      "image": null,
+    }
   });
 
   useEffect(() => {
     handleMainSuccess();
   }, []);
 
+  const day = mainScreenData.fishbreads.since;
+  const totalAmount = mainScreenData.fishbreads.price;
+  const formattedTotalAmount = totalAmount.toLocaleString();
+  const progress = (mainScreenData.fishbreads.price / 3000) * 100;
+
+  if (totalAmount <= 1000) {
+    container = <Case1 />;
+  } else if (totalAmount <= 2000) {
+    container = <Case2 />;
+  } else {
+    container = <Case3 />;
+  }
+
+  const onClickBtn = () => {
+    navigate("/history");
+  };
+
   return (
     <>
       <Navbar />
       <Container>
-        <div style={{margin: "0px 30px 40px 30px"}}>
+        <div style={{ margin: "0px 30px 40px 30px" }}>
           <Progressbar value={progress} />
+          <CommentPart>
+            <text>+{formattedTotalAmount}</text>
+            <text>+3,000</text>
+          </CommentPart>
         </div>
         <Title>{day}일차</Title>
         <div style={{margin: "20px 0px"}}>{container}</div>
@@ -144,5 +161,20 @@ const Title = styled(Grid)({
   fontWeight: 700,
   fontFamily: "titleFont",
 });
+
+const CommentPart = styled(Grid)`
+  border: none;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  text {
+    font-family: "titleFont";
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+`;
 
 export default HomePage;
