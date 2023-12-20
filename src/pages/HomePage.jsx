@@ -105,10 +105,6 @@ function HomePage() {
     container = <Case3 />;
   }
 
-  const onClickBtn = () => {
-    navigate("/history");
-  };
-
   return (
     <>
       <Navbar />
