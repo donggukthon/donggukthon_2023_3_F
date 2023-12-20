@@ -95,9 +95,7 @@ const LoginButton = styled.button`
 
   cursor: pointer;
   &:active,
-  &:hover {
-    /* opacity: 100%; */
-  }
+  &:hover
 
   image {
     z-index: 1;
