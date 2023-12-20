@@ -5,6 +5,7 @@ import ParkIcon from '@mui/icons-material/Park';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import PersonIcon from '@mui/icons-material/Person';
+import { GpsFixed } from '@mui/icons-material';
 
 function Footer() {
 	const navigate = useNavigate();
@@ -55,9 +56,11 @@ const StyledFooter = {
 	flexDirection: 'row',
 	justifyContent: 'space-around',
 	padding: '10px  0px',
-
+	position: 'fixed',
+	bottom: 0,
 	maxWidth: '390px',
 	margin: '0 auto',
+  width: '100%',
 };
 
 const IconButton = styled(Button)({
