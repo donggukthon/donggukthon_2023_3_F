@@ -57,7 +57,6 @@ const TextPart = styled.div`
     font-family: "niceFont";
     font-size: 20px;
     font-weight: 700;
-    // 이거 왜 색깔 적용이 안될까요 언니 ...
     color: black;
   }
 `;
