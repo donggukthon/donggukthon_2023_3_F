@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Navbar from '../components/common/Navbar';
 import { InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import SelectBank from "../components/SelectBank";
 import instance from "../api/axios";
 
 function AccountPage() {
