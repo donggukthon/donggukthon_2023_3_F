@@ -11,7 +11,7 @@ function ChooseDayPage() {
     // api 연결
     handleDaySuccess();
     // 화면 이동
-    navigate("/home");
+    // navigate("/home");
   };
   
   // 선택한 요일들 관리 
@@ -29,17 +29,16 @@ function ChooseDayPage() {
   // 2. res 인자 안 받아도 될 것 같다는 생각이 ... 
   // 3. API 명세에 작성되어 있는 것처럼 "date": selectedDays로 문자열로 작성해도 되는지 !
   const handleDaySuccess = async (res) => {
-    console.log(res.credential);
     try {
       const response = await instance.put("/api/v1/date", {
         "date": selectedDays,
       });
+      console.log(selectedDays);
       console.log(response.data);
     } catch (err) {
       console.error("Error: ", err);
     }
   };
-
   return (
     <>
       <Navbar />
@@ -55,7 +54,7 @@ function ChooseDayPage() {
       <DayRow>
       <DayButton
         onClick={() => handleDayButtonClick("MON")}
-        selected={selectedDays.includes("mon")}
+        selected={selectedDays.includes("MON")}
       >
         MON
       </DayButton>
@@ -63,13 +62,13 @@ function ChooseDayPage() {
       <DayRow>
         <DayButton
           onClick={() => handleDayButtonClick("TUE")}
-          selected={selectedDays.includes("tue")}
+          selected={selectedDays.includes("TUE")}
         >
           TUE
         </DayButton>
         <DayButton
           onClick={() => handleDayButtonClick("WED")}
-          selected={selectedDays.includes("wed")}
+          selected={selectedDays.includes("WED")}
         >
           WED
         </DayButton>
@@ -77,25 +76,25 @@ function ChooseDayPage() {
       <DayRow>
         <DayButton
           onClick={() => handleDayButtonClick("THU")}
-          selected={selectedDays.includes("thu")}
+          selected={selectedDays.includes("THU")}
         >
           THU
         </DayButton>
         <DayButton
           onClick={() => handleDayButtonClick("FRI")}
-          selected={selectedDays.includes("fri")}
+          selected={selectedDays.includes("FRI")}
         >
           FRI
         </DayButton>
         <DayButton
           onClick={() => handleDayButtonClick("SAT")}
-          selected={selectedDays.includes("sat")}
+          selected={selectedDays.includes("SAT")}
         >
           SAT
         </DayButton>
         <DayButton
           onClick={() => handleDayButtonClick("SUN")}
-          selected={selectedDays.includes("sun")}
+          selected={selectedDays.includes("SUN")}
         >
           SUN
         </DayButton>

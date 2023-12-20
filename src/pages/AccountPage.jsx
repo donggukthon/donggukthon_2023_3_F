@@ -16,10 +16,10 @@ function AccountPage() {
   };
   // 은행 선택 dropdown 
   const StyledFormControl = styled(FormControl)`
-  .MuiInputBase-root {
-    border: none;
-  }
-`;
+    .MuiInputBase-root {
+      border: none;
+    }
+  `;
 
   // 예금주명 input 칸 문자열 설정
   const [accountHolderName, setAccountHolderName] = useState("예금주명을 입력하세요");
@@ -27,11 +27,10 @@ function AccountPage() {
   const [accountNumber, setAccountNumber] = useState("계좌번호를 입력하세요");
   // 은행 선택 칸 값 설정
   const [bankValue, setBankValue] = useState('');
+
   const selectedBank = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setBankValue(e.target.value);
-    console.log('bankValue:', bankValue);
   };
   // 예금주명 input 클릭 시 값을 초기화하는 함수
   const HolderNameInputClick = (e) => {
@@ -39,6 +38,7 @@ function AccountPage() {
     console.log(e.target.value);
     setAccountHolderName(""); // 현재 입력값을 초기화
   };
+
   // 계좌번호 input 클릭 시 값을 초기화하는 함수
   const AccountNameInputClick = (e) => {
     e.preventDefault();
@@ -47,7 +47,8 @@ function AccountPage() {
   };
 
   // API 연결 -> 체크 필요
-  // 1. 셋 다 string으로 넘어가는지 
+  // 1. 셋 다 string으로 넘어가는지 (체크 완료)
+  // 2. string: value 형태로 넣는 게 맞는지
   const handleAccountSuccess = async (res) => {
     try {
       const response = await instance.put("/api/v1/bank", {
