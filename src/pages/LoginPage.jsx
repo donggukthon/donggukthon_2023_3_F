@@ -2,7 +2,6 @@ import {useNavigate, useLocation} from "react-router-dom";
 import React, {useState, useEffect} from "react";
 import {styled, Grid, Button, TextField, Alert, AlertTitle} from "@mui/material";
 import snowmanRoot from "../assets/images/snowman_tree.png";
-import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";
 import instance from "../api/axios";
@@ -20,6 +19,7 @@ function LoginPage() {
   const onClickSignup = () => {
     navigate("/signup");
   };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };

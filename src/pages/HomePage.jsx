@@ -63,6 +63,9 @@ function HomePage() {
   } else {
     container = <Case3 />;
   }
+  const onClickBtn = () => {
+    navigate("/history");
+  };
 
   // API 연결 -> 체크 필요
   const handleMainSuccess = async () => {
@@ -100,10 +103,6 @@ function HomePage() {
   } else {
     container = <Case3 />;
   }
-
-  const onClickBtn = () => {
-    navigate("/history");
-  };
 
   return (
     <>
