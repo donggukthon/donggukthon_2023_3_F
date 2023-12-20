@@ -56,14 +56,6 @@ function HomePage() {
   const navigate = useNavigate();
   let container;
 
-  if (totalAmount <= 1000) {
-    container = <Case1 />;
-  } else if (totalAmount < 3000) {
-    container = <Case2 />;
-  } else {
-    container = <Case3 />;
-  }
-
   const onClickBtn = () => {
     navigate("/history");
   };
@@ -104,10 +96,6 @@ function HomePage() {
   } else {
     container = <Case3 />;
   }
-
-  const onClickBtn = () => {
-    navigate("/history");
-  };
 
   return (
     <>

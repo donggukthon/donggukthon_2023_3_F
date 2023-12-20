@@ -2,7 +2,6 @@ import {useNavigate, useLocation} from "react-router-dom";
 import React, {useState, useEffect} from "react";
 import {styled, Grid, Button, TextField, Alert, AlertTitle} from "@mui/material";
 import snowmanRoot from "../assets/images/snowman_tree.png";
-import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";
 import instance from "../api/axios";
@@ -20,6 +19,7 @@ function LoginPage() {
   const onClickSignup = () => {
     navigate("/signup");
   };
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -123,7 +123,7 @@ function LoginPage() {
   );
 }
 
-const SnowmanImage = styled.div`
+const SnowmanImage = styled(Grid)`
   background-color: none;
   margin: 30px 0 0 30px;
   position: absolute;
@@ -132,16 +132,24 @@ const SnowmanImage = styled.div`
   z-index: 1;
 `;
 
-const GloveImage = styled.div`
-  background-color: none;
-  margin: -50px 0 0 180px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-`;
+// const GloveImage = styled.div`
+//   background-color: none;
+//   margin: -50px 0 0 180px;
+//   position: absolute;
+//   display: flex;
+//   justify-content: center;
+//   z-index: 1;
+// `;
 
-const TextPart = styled.div`
+const GloveImage = styled(Grid)({
+  margin: "-100px 0px 0px 180px",
+  position: "absolute",
+  display: "flex",
+  justifyContent: "center",
+  zIndex: 1,
+});
+
+const TextPart = styled(Grid)`
   border: none;
   position: relative;
   display: flex;
@@ -155,7 +163,7 @@ const TextPart = styled.div`
   }
 `;
 
-const WhiteBox = styled.div`
+const WhiteBox = styled(Grid)`
   width: 300px;
   height: 300px;
   background-color: white;
@@ -169,7 +177,7 @@ const WhiteBox = styled.div`
   z-index: 0;
 `;
 
-const LoginButton = styled.button`
+const LoginButton = styled(Grid)`
   width: 220px;
   height: 35px;
   background: none;
@@ -188,14 +196,7 @@ const LoginButton = styled.button`
 
   cursor: pointer;
   &:active,
-  &:hover
-
-const GloveImage = styled(Grid)({
-  margin: "-100px 0px 0px 180px",
-  position: "absolute",
-  display: "flex",
-  justifyContent: "center",
-  zIndex: 1,
-});
+  &:hover {}
+`;
 
 export default LoginPage;
