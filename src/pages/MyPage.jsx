@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { styled, Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
-import SelectBank from '../components/SelectBank';
 
 function MyPage() {
 	const navigate = useNavigate();
@@ -14,6 +13,13 @@ function MyPage() {
 		navigate('/history');
 	};
 
+	// 은행 선택 dropdown 
+  const StyledFormControl = styled(FormControl)`
+		.MuiInputBase-root {
+			border: none;
+		};
+	`;
+	
 	return (
 		<>
 			<Navbar />
@@ -51,7 +57,17 @@ function MyPage() {
 						}}
 					/>
 					<GridTitle marginBottom='10px'>은행명</GridTitle>
-					<SelectBank />
+					<StyledFormControl fullWidth>
+            <InputLabel id='demo-simple-select-small-label'>은행명</InputLabel>
+            <Select 
+              labelId='demo-simple-select-small-label' 
+              id='demo-select-small'
+            >
+              <MenuItem value={'하나'}>하나은행</MenuItem>
+              <MenuItem value={'카카오뱅크'}>카카오뱅크</MenuItem>
+              <MenuItem value={'수협'}>수협은행</MenuItem>
+            </Select>
+          </StyledFormControl>
 					<GridTitle marginTop='10px'>계좌번호</GridTitle>
 					<input
 						type='text'

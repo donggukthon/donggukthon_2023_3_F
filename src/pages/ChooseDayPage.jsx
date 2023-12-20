@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from '../components/common/Navbar';
+import instance from "../api/axios";
 
 function ChooseDayPage() {
   // 다음 페이지 이동
   const navigate = useNavigate();
   const onClickStart = () => {
+    // api 연결
+    handleDaySuccess();
+    // 화면 이동
     navigate("/home");
   };
   
@@ -20,6 +24,20 @@ function ChooseDayPage() {
     }
   };
 
+  // API 연결 -> 체크 필요
+  // 1. 혹시 이 함수는 동기로 처리되어야 하는지 !
+  // 3. "date": selectedDays로 문자열로 작성해도 되는지 !
+  const handleDaySuccess = async () => {
+    try {
+      const response = await instance.put("/api/v1/date", {
+        "date": selectedDays,
+      });
+      console.log(selectedDays);
+      console.log(response.data);
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
   return (
     <>
       <Navbar />
