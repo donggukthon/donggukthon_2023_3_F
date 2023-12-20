@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
-import Navbar from '../components/common/Navbar';
+import Navbar from "../components/common/Navbar";
 import instance from "../api/axios";
 
 function ChooseDayPage() {
@@ -9,12 +9,12 @@ function ChooseDayPage() {
   const navigate = useNavigate();
   const onClickStart = () => {
     // api 연결
-    handleDaySuccess();
+    // handleDaySuccess();
     // 화면 이동
     navigate("/home");
   };
-  
-  // 선택한 요일들 관리 
+
+  // 선택한 요일들 관리
   const [selectedDays, setSelectedDays] = useState([]);
   const handleDayButtonClick = (day) => {
     if (selectedDays.includes(day)) {
@@ -30,7 +30,7 @@ function ChooseDayPage() {
   const handleDaySuccess = async () => {
     try {
       const response = await instance.put("/api/v1/date", {
-        "date": selectedDays,
+        date: selectedDays,
       });
       console.log(selectedDays);
       console.log(response.data);
@@ -44,57 +44,40 @@ function ChooseDayPage() {
       <PageState>
         <CommentPart>
           <text>Share your warmth</text>
-          <br/>
+          <br />
           <text>With our app</text>
         </CommentPart>
       </PageState>
       <FixedBoldText>기부 요일 선택</FixedBoldText>
-      <FixedText>선택한 요일 22시에 계좌의  1000원 미만의<br/>자투리 금액이 기부됩니다! </FixedText>
+      <FixedText>
+        선택한 요일 22시에 계좌의 1000원 미만의
+        <br />
+        자투리 금액이 기부됩니다!{" "}
+      </FixedText>
       <DayRow>
-      <DayButton
-        onClick={() => handleDayButtonClick("MON")}
-        selected={selectedDays.includes("MON")}
-      >
-        MON
-      </DayButton>
+        <DayButton onClick={() => handleDayButtonClick("MON")} selected={selectedDays.includes("MON")}>
+          MON
+        </DayButton>
       </DayRow>
       <DayRow>
-        <DayButton
-          onClick={() => handleDayButtonClick("TUE")}
-          selected={selectedDays.includes("TUE")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("TUE")} selected={selectedDays.includes("TUE")}>
           TUE
         </DayButton>
-        <DayButton
-          onClick={() => handleDayButtonClick("WED")}
-          selected={selectedDays.includes("WED")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("WED")} selected={selectedDays.includes("WED")}>
           WED
         </DayButton>
       </DayRow>
       <DayRow>
-        <DayButton
-          onClick={() => handleDayButtonClick("THU")}
-          selected={selectedDays.includes("THU")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("THU")} selected={selectedDays.includes("THU")}>
           THU
         </DayButton>
-        <DayButton
-          onClick={() => handleDayButtonClick("FRI")}
-          selected={selectedDays.includes("FRI")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("FRI")} selected={selectedDays.includes("FRI")}>
           FRI
         </DayButton>
-        <DayButton
-          onClick={() => handleDayButtonClick("SAT")}
-          selected={selectedDays.includes("SAT")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("SAT")} selected={selectedDays.includes("SAT")}>
           SAT
         </DayButton>
-        <DayButton
-          onClick={() => handleDayButtonClick("SUN")}
-          selected={selectedDays.includes("SUN")}
-        >
+        <DayButton onClick={() => handleDayButtonClick("SUN")} selected={selectedDays.includes("SUN")}>
           SUN
         </DayButton>
       </DayRow>
@@ -128,7 +111,7 @@ const FixedBoldText = styled.div`
   font-family: "descriptBoldFont";
   font-size: 18px;
   font-weight: 100;
-  color: #4A453A;
+  color: #4a453a;
   text-align: center;
   margin-bottom: 20px;
 `;
@@ -137,7 +120,7 @@ const FixedText = styled.div`
   font-family: "descriptFont";
   font-size: 13px;
   font-weight: 100;
-  color: #4A453A;
+  color: #4a453a;
   text-align: center;
   margin-bottom: 20px;
 `;
@@ -151,12 +134,12 @@ const DayButton = styled.button`
   font-family: "descriptBoldFont";
   font-size: 15px;
   opacity: 80%;
-  background-color: ${({ selected }) => (selected ? "#EEBD53" : "white")};
+  background-color: ${({selected}) => (selected ? "#EEBD53" : "white")};
   cursor: pointer;
 
   &:active,
   &:hover {
-    background-color: #EEBD53;
+    background-color: #eebd53;
     opacity: 100%;
   }
 `;

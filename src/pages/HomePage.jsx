@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
-import { styled, Grid, Button } from "@mui/material";
+import {useNavigate} from "react-router-dom";
+import {styled, Grid, Button} from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Progressbar from "../components/Progressbar";
@@ -64,10 +64,6 @@ function HomePage() {
     container = <Case3 />;
   }
 
-  const onClickBtn = () => {
-    navigate("/history");
-  };
-
   // API 연결 -> 체크 필요
   const handleMainSuccess = async () => {
     try {
@@ -80,12 +76,12 @@ function HomePage() {
 
   // 상태 관리
   const [mainScreenData, setmainScreenData] = useState({
-    "fishbreads": {
-      "id": 1,
-      "price": 2550,
-      "since": 3,
-      "image": null,
-    }
+    fishbreads: {
+      id: 1,
+      price: 2550,
+      since: 3,
+      image: null,
+    },
   });
 
   useEffect(() => {
@@ -113,7 +109,7 @@ function HomePage() {
     <>
       <Navbar />
       <Container>
-        <div style={{ margin: "0px 30px 40px 30px" }}>
+        <div style={{margin: "0px 30px 40px 30px"}}>
           <Progressbar value={progress} />
           <CommentPart>
             <text>+{formattedTotalAmount}</text>

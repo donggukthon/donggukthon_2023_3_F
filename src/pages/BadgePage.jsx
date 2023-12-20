@@ -12,7 +12,8 @@ import Badge6 from "../assets/images/badge6.png";
 import Badge7 from "../assets/images/badge7.png";
 import Badge8 from "../assets/images/badge8.png";
 import Badge9 from "../assets/images/badge9.png";
-import Badge0 from '../assets/images/badge0.png';
+import Badge0 from "../assets/images/badge0.png";
+import instance from "../api/axios";
 
 function BadgePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,30 +25,30 @@ function BadgePage() {
   };
 
   // API 연결 -> 체크 필요
-	const handleUserFishbread = async () => {
-		try {
-			const response = await instance.get("/api/v1/badge");
-			console.log(response.data);
-		} catch (err) {
-			console.error("Error: ", err);
-		}
-	};
+  const handleUserFishbread = async () => {
+    try {
+      const response = await instance.get("/api/v1/badge");
+      console.log(response.data);
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
 
   // 상태 관리
   const [badgeData, setbadgeData] = useState([
     {
-      "badges": [
+      badges: [
         {
-          "id": 1,
-          "image": {Badge0},
-        }
-      ]
-    }
+          id: 1,
+          image: {Badge0},
+        },
+      ],
+    },
   ]);
 
   useEffect(() => {
-		handleUserFishbread();
-	}, []);
+    handleUserFishbread();
+  }, []);
 
   return (
     <>
