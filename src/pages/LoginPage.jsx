@@ -25,13 +25,12 @@ function LoginPage() {
         <img src={snowmanRoot} width="200px" />
       </SnowmanImage>
 
-      <Grid sx={{width: "300px", height: "400px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "160px 40px 50px 40px"}}>
+      <Grid sx={{width: "300px", height: "350px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "160px 40px 50px 40px"}}>
         <Grid sx={{display: "flex", justifyContent: "center", textAlign: "center", margin: "50px 22px 0px 30px"}}>
           <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Sign in Your Account!</Grid>
         </Grid>
 
         <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "center", alignItems: "center", margin: "15px 0px", gap: "10px"}}>
-          <TextField sx={{background: "transparent"}} id="name" type="name" label="이름" variant="outlined" size="small" />
           <TextField sx={{background: "transparent"}} id="id" type="email" label="이메일" variant="outlined" size="small" />
           <TextField sx={{backgroundColor: "transparent"}} id="pw" type="password" label="패스워드" size="small" />
           {/* {successLogin ? null : (
