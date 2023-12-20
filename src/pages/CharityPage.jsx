@@ -11,9 +11,22 @@ import Charity4 from "../assets/images/lowIncome.png";
 function CharityPage() {
   const navigate = useNavigate();
 
-  const onClickedCharity = (charityName, charityImage) => {
-    navigate("/detail", {state: {charityName, charityImage}});
+  const getCharityNum = (charityName) => {
+    const charityMap = {
+      어린이: 1,
+      독거노인: 2,
+      난민: 3,
+      저소득층: 4,
+    };
+
+    return charityMap[charityName] || 0;
   };
+
+  const onClickedCharity = (charityName, charityImage) => {
+    const charityNum = getCharityNum(charityName);
+    navigate(`/detail?charityNum=${charityNum}`, {state: {charityName, charityImage, charityNum}});
+  };
+
   return (
     <>
       <Navbar />

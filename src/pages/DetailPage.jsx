@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useNavigate, useLocation} from "react-router-dom";
 import {styled, Grid, Button, Img} from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Fishbread from "../assets/images/basic_fishbread.png";
 import Building from "../assets/images/building.png";
+import instance from "../api/axios";
 
 function DetailPage() {
   const location = useLocation();
-  const {charityName, charityImage} = location.state;
+  const {charityName, charityImage, charityNum} = location.state;
   const fishbreadAmount = 129;
 
   let charityDetail;
@@ -22,6 +23,16 @@ function DetailPage() {
   } else {
     charityDetail = "독거노인 종합지원센터";
   }
+
+  useEffect(() => {
+    const fetchCharityData = async () => {
+      try {
+        const response = await instance.get(`/api/v1/charity/{charity_id}`);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  });
 
   return (
     <>
