@@ -54,14 +54,14 @@ function Case3() {
 function HomePage() {
   const navigate = useNavigate();
   const day = 2;
-  const totalAmount = 3290;
+  const totalAmount = 3000;
   const formattedTotalAmount = totalAmount.toLocaleString();
   const progress = 50;
   let container;
 
   if (totalAmount <= 1000) {
     container = <Case1 />;
-  } else if (totalAmount <= 2000) {
+  } else if (totalAmount < 3000) {
     container = <Case2 />;
   } else {
     container = <Case3 />;
