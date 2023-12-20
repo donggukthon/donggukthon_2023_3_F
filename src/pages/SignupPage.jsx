@@ -27,7 +27,7 @@ function SignupPage() {
 
       <Grid sx={{width: "300px", height: "350px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "180px 40px 50px 40px"}}>
         <Grid sx={{display: "flex", justifyContent: "center", textAlign: "center", margin: "50px 22px 0px 30px"}}>
-          <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Sign in Your Account!</Grid>
+          <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Create Your Account!</Grid>
         </Grid>
 
         <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "center", alignItems: "center", margin: "15px 0px", gap: "10px"}}>
