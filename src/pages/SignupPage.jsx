@@ -6,7 +6,7 @@ import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";
 
-function LoginPage() {
+function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successLogin, setSuccessLogin] = useState(true);
@@ -25,12 +25,13 @@ function LoginPage() {
         <img src={snowmanRoot} width="200px" />
       </SnowmanImage>
 
-      <Grid sx={{width: "300px", height: "350px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "160px 40px 50px 40px"}}>
+      <Grid sx={{width: "300px", height: "350px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "180px 40px 50px 40px"}}>
         <Grid sx={{display: "flex", justifyContent: "center", textAlign: "center", margin: "50px 22px 0px 30px"}}>
-          <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Sign in Your Account!</Grid>
+          <Grid sx={{fontFamily: "niceFont", fontSize: "20px", fontWeight: 700}}>Create Your Account!</Grid>
         </Grid>
 
         <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "center", alignItems: "center", margin: "15px 0px", gap: "10px"}}>
+          <TextField sx={{background: "transparent"}} id="name" type="name" label="이름" variant="outlined" size="small" />
           <TextField sx={{background: "transparent"}} id="id" type="email" label="이메일" variant="outlined" size="small" />
           <TextField sx={{backgroundColor: "transparent"}} id="pw" type="password" label="패스워드" size="small" />
           {/* {successLogin ? null : (
@@ -39,20 +40,11 @@ function LoginPage() {
               <strong>아이디</strong>와 <strong>비밀번호</strong>를 확인해보세요.
             </Alert>
           )} */}
-        </Grid>
-
-        <Grid sx={{display: "flex", flexDirection: "column", justifyContent: "flex-end", textAlign: "right", marginRight: "20px"}}>
-          <Grid sx={{fontSize: "14px", marginTop: "2px", color: "#757575"}}>계정이 없으신가요?</Grid>
-          <Button sx={{marginLeft: "190px", color: "#B87514", fontSize: "14px", width: "90px"}} onClick={onClickSignup}>
-            회원가입
-          </Button>
-        </Grid>
-        <Grid sx={{marginTop: "20px", display: "flex", justifyContent: "center", textAlign: "center"}}>
           <Button
             onClick={onClickLogin}
             sx={{
               opacity: "100%",
-              margin: "0px 0px",
+              margin: "20px 0px",
               background: "#ED3333",
               width: "180px",
               height: "40px",
@@ -64,7 +56,7 @@ function LoginPage() {
               },
             }}
           >
-            로그인
+            회원가입
           </Button>
         </Grid>
       </Grid>
@@ -75,79 +67,20 @@ function LoginPage() {
   );
 }
 
-const SnowmanImage = styled.div`
-  background-color: none;
-  margin: 30px 0 0 30px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-`;
-
-const GloveImage = styled.div`
-  background-color: none;
-  margin: -50px 0 0 180px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-`;
-
-const TextPart = styled.div`
-  border: none;
-  position: relative;
-  display: flex;
-  margin-top: 40px;
-
-  text {
-    font-family: "niceFont";
-    font-size: 20px;
-    font-weight: 700;
-    color: black;
-  }
-`;
-
-const WhiteBox = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: white;
-  opacity: 60%;
-  border-radius: 15px;
-  margin: 190px auto 0 auto;
-  position: relative;
-  /* overflow-x: auto; */
-  display: flex;
-  justify-content: center;
-  z-index: 0;
-`;
-
-const LoginButton = styled.button`
-  width: 220px;
-  height: 35px;
-  background: none;
-  border: none;
-  border-radius: 10px;
-  font-family: "Godo", sans-serif;
-  font-size: 17px;
-  color: white;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 350px;
-  left: 393px;
-
-  cursor: pointer;
-  &:active,
-  &:hover
-
-const GloveImage = styled(Grid)({
-  margin: "-100px 0px 0px 180px",
+const SnowmanImage = styled(Grid)({
+  margin: "30px 0px 0px 30px",
   position: "absolute",
   display: "flex",
   justifyContent: "center",
   zIndex: 1,
 });
 
-export default LoginPage;
+const GloveImage = styled(Grid)({
+  margin: "-90px 0px 0px 180px",
+  position: "absolute",
+  display: "flex",
+  justifyContent: "center",
+  zIndex: 1,
+});
+
+export default SignupPage;

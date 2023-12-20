@@ -3,8 +3,8 @@ import {createGlobalStyle} from "styled-components";
 import basicFont from "./assets/fonts/NanumSquareRoundR.ttf";
 import titleFont from "./assets/fonts/netmarbleM.ttf";
 import lineFont from "./assets/fonts/RampartOne.ttf";
-import niceFont from './assets/fonts/VollkornSCR.ttf';
-import descriptFont from './assets/fonts/DMSans.ttf';
+import niceFont from "./assets/fonts/VollkornSCR.ttf";
+import descriptFont from "./assets/fonts/DMSans.ttf";
 import MainPage from "./pages/MainPage";
 import HomePage from "./pages/HomePage";
 import CharityPage from "./pages/CharityPage";
@@ -13,6 +13,7 @@ import MyPage from "./pages/MyPage";
 import HistoryPage from "./pages/HistoryPage";
 import DetailPage from "./pages/DetailPage";
 import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import AccountPage from "./pages/AccountPage";
 import ChooseDayPage from "./pages/ChooseDayPage";
 
@@ -93,7 +94,7 @@ function App() {
       <div className="layout">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/day" element={<ChooseDayPage />} />
           <Route path="/home" element={<HomePage />} />

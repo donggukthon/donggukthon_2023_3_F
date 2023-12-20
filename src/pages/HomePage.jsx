@@ -55,13 +55,24 @@ function Case3() {
 function HomePage() {
   const navigate = useNavigate();
   let container;
-  
+
+  if (totalAmount <= 1000) {
+    container = <Case1 />;
+  } else if (totalAmount < 3000) {
+    container = <Case2 />;
+  } else {
+    container = <Case3 />;
+  }
+
+  const onClickBtn = () => {
+    navigate("/history");
+  };
+
   // API 연결 -> 체크 필요
   const handleMainSuccess = async () => {
     try {
       const response = await instance.get("/api/v1/fishbread");
       console.log(response.data);
-
     } catch (err) {
       console.error("Error: ", err);
     }
@@ -78,8 +89,8 @@ function HomePage() {
   });
 
   useEffect(() => {
-		handleMainSuccess();
-	}, []);
+    handleMainSuccess();
+  }, []);
 
   const day = mainScreenData.fishbreads.since;
   const totalAmount = mainScreenData.fishbreads.price;
