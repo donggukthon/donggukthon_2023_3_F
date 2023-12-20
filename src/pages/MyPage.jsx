@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled, Grid, Button, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Navbar from '../components/common/Navbar';
@@ -11,9 +11,9 @@ function MyPage() {
 
 	// 상태 관리
 	const [userData, setUserData] = useState({
-		name: '',
-		account_num: '',
-		email: '',
+		name: '김혜연 ',
+		account_num: '3333-84-1238352',
+		email: 'hyeyeonkim@naver.com',
 	});
 
 	// API 연결 -> 체크 필요
