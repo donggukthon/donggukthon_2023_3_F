@@ -1,20 +1,25 @@
-import React, { useState } from "react";
-import styled from 'styled-components';
-import Navbar from '../components/common/Navbar';
-import { InputLabel, MenuItem, FormControl, Select } from '@mui/material';
-import { useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import styled from "styled-components";
+import Navbar from "../components/common/Navbar";
+import {InputLabel, MenuItem, FormControl, Select, TextField} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 import instance from "../api/axios";
 
 function AccountPage() {
+  const [bank, setBank] = useState("");
+
   // 요일 선택 페이지로 이동
   const navigate = useNavigate();
   const onClickNext = () => {
-    // api 연결 
+    // api 연결
     handleAccountSuccess();
     // 화면 이동
     navigate("/day");
   };
-  // 은행 선택 dropdown 
+  const handleBankChange = (event) => {
+    setBank(event.target.value);
+  };
+  // 은행 선택 dropdown
   const StyledFormControl = styled(FormControl)`
     .MuiInputBase-root {
       border: none;
@@ -26,10 +31,8 @@ function AccountPage() {
   // 계좌번호 input 칸 문자열 설정
   const [accountNumber, setAccountNumber] = useState("계좌번호를 입력하세요");
   // 은행 선택 칸 값 설정
-  const [bankValue, setBankValue] = useState('');
-  const selectedBank = (e) => {
-    setBankValue(e.target.value);
-  };
+  const [bankValue, setBankValue] = useState("");
+
   // 예금주명 input 클릭 시 값을 초기화하는 함수
   const HolderNameInputClick = (e) => {
     e.preventDefault();
@@ -48,9 +51,9 @@ function AccountPage() {
   const handleAccountSuccess = async () => {
     try {
       const response = await instance.put("/api/v1/bank", {
-        "bankname": bankValue,
-        "holder": accountHolderName,
-        "account_num": accountNumber,
+        bankname: bankValue,
+        holder: accountHolderName,
+        account_num: accountNumber,
       });
       console.log(response.data);
     } catch (err) {
@@ -64,43 +67,27 @@ function AccountPage() {
       <PageState>
         <CommentPart>
           <text>Share your warmth</text>
-          <br/>
+          <br />
           <text>With our app</text>
         </CommentPart>
 
         <FixedText>예금주명</FixedText>
-        <UserInputPart
-          value={accountHolderName}
-          onChange={
-            (e) => setAccountHolderName(e.target.value)
-          }
-          onClick={HolderNameInputClick}
-        />
+        <UserInputPart value={accountHolderName} onChange={(e) => setAccountHolderName(e.target.value)} onClick={HolderNameInputClick} />
 
         <FixedText>은행 선택</FixedText>
         <UserInputBox>
           <StyledFormControl fullWidth>
-            <InputLabel id='demo-simple-select-small-label'>은행명</InputLabel>
-            <Select 
-              labelId='demo-simple-select-small-label' 
-              id='demo-select-small'
-              onChange={selectedBank}
-            >
-              <MenuItem value={'하나'}>하나은행</MenuItem>
-              <MenuItem value={'카카오뱅크'}>카카오뱅크</MenuItem>
-              <MenuItem value={'수협'}>수협은행</MenuItem>
+            <InputLabel id="demo-simple-select-small-label">은행명</InputLabel>
+            <Select labelId="demo-simple-select-small-label" id="demo-select-small" value={bank} onChange={handleBankChange}>
+              <MenuItem value={"하나"}>하나은행</MenuItem>
+              <MenuItem value={"카카오뱅크"}>카카오뱅크</MenuItem>
+              <MenuItem value={"수협"}>수협은행</MenuItem>
             </Select>
           </StyledFormControl>
         </UserInputBox>
 
         <FixedText>계좌번호</FixedText>
-        <UserInputPart
-          value={accountNumber}
-          onChange={
-            (e) => setAccountNumber(e.target.value)
-          }
-          onClick={AccountNameInputClick}
-        />
+        <UserInputPart value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} onClick={AccountNameInputClick} />
       </PageState>
       <StartButton onClick={onClickNext}>다음</StartButton>
     </>
@@ -132,7 +119,7 @@ const FixedText = styled.div`
   font-family: "descriptFont";
   font-size: 18px;
   font-weight: 100;
-  color: #4A453A;
+  color: #4a453a;
   margin-left: 35px;
   margin-bottom: 10px;
 `;
