@@ -8,9 +8,33 @@ import instance from "../api/axios";
 
 function MyPage() {
 	const navigate = useNavigate();
-	const userName = '김혜연';
-	const userAccount = '620-238849-937';
-	const userEmail = 'hyeyeonkim@naver.com';
+
+	// 상태 관리
+	const [userData, setUserData] = useState({
+		name: '',
+		account_num: '',
+		email: '',
+	});
+
+	// API 연결 -> 체크 필요
+	const handleAccountSuccess = async () => {
+		try {
+			const response = await instance.get("/api/v1/mypage");
+			console.log(response.data);
+
+			setUserData(response.data);	// 상태 업데이트
+		} catch (err) {
+			console.error("Error: ", err);
+		}
+	};
+
+	useEffect(() => {
+		handleAccountSuccess();
+	}, []);
+
+	const userName = userData.name;
+	const userAccount = userData.account_num;
+	const userEmail = userData.email;
 
 	// 은행 선택 칸 값 설정
   const [bankValue, setBankValue] = useState('');
@@ -28,23 +52,6 @@ function MyPage() {
 			border: none;
 		};
 	`;
-
-	// API 연결 -> 체크 필요
-  const handleAccountSuccess = async () => {
-    try {
-      const response = await instance.put("/api/v1/mypage", {
-        "email": userEmail,
-				"name": userName,
-        "holder": null,
-				"bankname": bankValue,
-        "account_num": userAccount,
-				"date": null,
-      });
-      console.log(response.data);
-    } catch (err) {
-      console.error("Error: ", err);
-    }
-  };
 	
 	return (
 		<>
