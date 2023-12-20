@@ -13,6 +13,7 @@ import Badge7 from "../assets/images/badge7.png";
 import Badge8 from "../assets/images/badge8.png";
 import Badge9 from "../assets/images/badge9.png";
 import Badge0 from '../assets/images/badge0.png';
+import instance from "../api/axios";
 
 function BadgePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
