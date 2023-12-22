@@ -18,7 +18,8 @@
   4) 과정이 번거로움
   5) 기부 단체의 신뢰도가 떨어짐
  
-### User Segmentation & Persona
+### 🧍🏻🧍🏻‍♀️ User Segmentation & Persona
+저희가 타겟으로 선정한 사용자는 다음과 같습니다. <br/><br/>
 <img width="762" alt="Screenshot 2023-12-21 at 13 57 07" src="https://github.com/donggukthon/donggukthon_2023_3_F/assets/114139700/b987b7fd-d5e4-47cf-b7f1-77166bf18b17">
 <br/>
 <img width="762" alt="Screenshot 2023-12-21 at 13 31 36" src="https://github.com/donggukthon/donggukthon_2023_3_F/assets/114139700/52c99fbb-70f9-46de-bf94-e97f840b7100">
