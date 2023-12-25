@@ -1,6 +1,6 @@
-import {useNavigate, useLocation} from "react-router-dom";
-import React, {useState, useEffect} from "react";
-import {styled, Grid, Button, TextField, Alert, AlertTitle} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { styled, Grid, Button, TextField } from "@mui/material";
 import snowmanRoot from "../assets/images/snowman_tree.png";
 import gloveRoot from "../assets/images/glove.png";
 import Navbar from "../components/common/Navbar";

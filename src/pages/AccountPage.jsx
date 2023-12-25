@@ -1,9 +1,17 @@
-import React, {useState} from "react";
+import React, { useState, useMemo } from "react";
 import styled from "styled-components";
 import Navbar from "../components/common/Navbar";
-import {InputLabel, MenuItem, FormControl, Select, TextField} from "@mui/material";
-import {useNavigate} from "react-router-dom";
+import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import instance from "../api/axios";
+
+// 은행 선택 dropdown
+// component 바깥으로 옮겨서 리렌더링 방지
+const StyledFormControl = styled(FormControl)`
+  .MuiInputBase-root {
+    border: none;
+  }
+`;
 
 function AccountPage() {
   const [bank, setBank] = useState("");
@@ -16,15 +24,10 @@ function AccountPage() {
     // 화면 이동
     navigate("/day");
   };
+  // 선택한 은행 값으로 변경
   const handleBankChange = (event) => {
     setBank(event.target.value);
   };
-  // 은행 선택 dropdown
-  const StyledFormControl = styled(FormControl)`
-    .MuiInputBase-root {
-      border: none;
-    }
-  `;
 
   // 예금주명 input 칸 문자열 설정
   const [accountHolderName, setAccountHolderName] = useState("예금주명을 입력하세요");
@@ -47,7 +50,6 @@ function AccountPage() {
     setAccountNumber(""); // 현재 입력값을 초기화
   };
 
-  // API 연결 -> 체크 필요
   const handleAccountSuccess = async () => {
     try {
       const response = await instance.put("/api/v1/bank", {
@@ -61,6 +63,15 @@ function AccountPage() {
     }
   };
 
+  const memoizedValues = useMemo(
+    () => ({
+      accountHolderName,
+      accountNumber,
+      bankValue,
+    }),
+    [accountHolderName, accountNumber, bankValue]
+  );
+
   return (
     <>
       <Navbar />
@@ -72,13 +83,22 @@ function AccountPage() {
         </CommentPart>
 
         <FixedText>예금주명</FixedText>
-        <UserInputPart value={accountHolderName} onChange={(e) => setAccountHolderName(e.target.value)} onClick={HolderNameInputClick} />
+        <UserInputPart 
+          value={memoizedValues.accountHolderName} 
+          onChange={(e) => setAccountHolderName(e.target.value)} 
+          onClick={HolderNameInputClick} 
+        />
 
         <FixedText>은행 선택</FixedText>
         <UserInputBox>
           <StyledFormControl fullWidth>
-            <InputLabel id="demo-simple-select-small-label">은행명</InputLabel>
-            <Select labelId="demo-simple-select-small-label" id="demo-select-small" value={bank} onChange={handleBankChange}>
+            <InputLabel id="select-bank">은행명</InputLabel>
+            <Select 
+              labelId="select-bank" 
+              id="select-user-bank" 
+              value={bank} 
+              onChange={handleBankChange}
+            >
               <MenuItem value={"하나"}>하나은행</MenuItem>
               <MenuItem value={"카카오뱅크"}>카카오뱅크</MenuItem>
               <MenuItem value={"수협"}>수협은행</MenuItem>
@@ -87,7 +107,11 @@ function AccountPage() {
         </UserInputBox>
 
         <FixedText>계좌번호</FixedText>
-        <UserInputPart value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} onClick={AccountNameInputClick} />
+        <UserInputPart 
+          value={memoizedValues.accountNumber} 
+          onChange={(e) => setAccountNumber(e.target.value)} 
+          onClick={AccountNameInputClick} 
+        />
       </PageState>
       <StartButton onClick={onClickNext}>다음</StartButton>
     </>
