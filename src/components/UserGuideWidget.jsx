@@ -3,6 +3,7 @@ import styled from "styled-components";
 import fishbread from "../assets/images/santa_fishbread_brown.png";
 
 function UserGuideWidget() {
+  // 이용 안내 컨텐츠 객체
   const items = [
     {
       content:
@@ -37,7 +38,12 @@ function UserGuideWidget() {
 
   return (
     <CarouselContainer>
-      <Carousel autoPlay={false} animation="slide" timeout={500} navButtonsAlwaysVisible={false} navButtonsAlwaysInvisible={false}>
+      <Carousel 
+        autoPlay={false} 
+        animation="slide" 
+        navButtonsAlwaysVisible={false} 
+        navButtonsAlwaysInvisible={false}
+      >
         {items.map((item, i) => (
           <CarouselItem key={i}>
             <ContentContainer>
@@ -52,7 +58,6 @@ function UserGuideWidget() {
 }
 
 const CarouselContainer = styled.div`
-  overflow: hidden;
   width: 100%;
   height: 270px;
 `;
@@ -77,7 +82,6 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.img`
   width: 110px;
-  /* max-width: 100%; */
   height: auto;
 `;
 
