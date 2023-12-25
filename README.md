@@ -1,7 +1,12 @@
 # 🤎 사랑의 붕어빵 🤎
 
 ### 🧤 프로젝트 소개
+🏆 제 1회 동국톤 `최우수상` 수상 🏆
+<br/><br/>
 <img width="762" alt="Screenshot 2023-12-21 at 13 23 15" src="https://github.com/donggukthon/donggukthon_2023_3_F/assets/114139700/88d0e677-af8c-4bc6-9efe-1c710f9c44e7">
+<br/>
+
+
 
 #### Q. `사랑의 붕어빵`은 무슨 서비스인가요?
 - 부담을 줄이고 간편하게 할 수 있는 기부
@@ -18,7 +23,8 @@
   4) 과정이 번거로움
   5) 기부 단체의 신뢰도가 떨어짐
  
-### User Segmentation & Persona
+### 🧍🏻🧍🏻‍♀️ User Segmentation & Persona
+저희가 타겟으로 선정한 사용자는 다음과 같습니다. <br/><br/>
 <img width="762" alt="Screenshot 2023-12-21 at 13 57 07" src="https://github.com/donggukthon/donggukthon_2023_3_F/assets/114139700/b987b7fd-d5e4-47cf-b7f1-77166bf18b17">
 <br/>
 <img width="762" alt="Screenshot 2023-12-21 at 13 31 36" src="https://github.com/donggukthon/donggukthon_2023_3_F/assets/114139700/52c99fbb-70f9-46de-bf94-e97f840b7100">
