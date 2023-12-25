@@ -1,6 +1,6 @@
-import {useNavigate, useLocation} from "react-router-dom";
-import React, {useState, useEffect} from "react";
-import {styled, Grid, Button, TextField, Alert, AlertTitle} from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { styled, Grid, Button, TextField, Alert, AlertTitle } from "@mui/material";
 import snowmanRoot from "../assets/images/snowman_tree.png";
 import kakaologinRoot from "../assets/images/kakao_login.png";
 import gloveRoot from "../assets/images/glove.png";
@@ -12,7 +12,6 @@ function SignupPage() {
   const [password, setPassword] = useState("");
   const [signupData, setSignupData] = useState({
     //회원가입 데이터
-
     email: "",
     password: "",
   });
@@ -59,7 +58,7 @@ function SignupPage() {
     <>
       <Navbar />
       <SnowmanImage>
-        <img src={snowmanRoot} width="200px" />
+        <img src={snowmanRoot} width="200px" alt='snowman'/>
       </SnowmanImage>
 
       <Grid sx={{width: "300px", height: "350px", backgroundColor: "white", opacity: "60%", borderRadius: "15px", display: "flex", flexDirection: "column", margin: "180px 40px 50px 40px"}}>

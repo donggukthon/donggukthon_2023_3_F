@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import presentRoot from "../assets/images/present.png";
 import UserGuideWidget from "../components/UserGuideWidget";
+import RedButton from "../components/common/RedButton";
 
 function MainPage() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function MainPage() {
   return (
     <>
       <ImagePart>
-        <img src={presentRoot} width="180px" />
+        <img src={presentRoot} width="180px" alt='img'/>
       </ImagePart>
       <TextPart>
         <text>
@@ -28,7 +29,7 @@ function MainPage() {
           <UserGuideWidget />
         </UserGuideWidgetContainer>
       </WhiteBox>
-      <StartButton onClick={onClickStart}>시작하기</StartButton>
+      <RedButton onClickFunc={onClickStart}>시작하기</RedButton>
     </>
   );
 }
@@ -51,7 +52,8 @@ const TextPart = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-
+  text-align: center;
+  
   text {
     font-family: "lineFont";
     font-size: 30px;
@@ -76,38 +78,6 @@ const WhiteBox = styled.div`
 const UserGuideWidgetContainer = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-const StartButton = styled.button`
-  width: 250px;
-  height: 45px;
-  background: var(--button-bg-color, #ed3333);
-  border: none;
-  border-radius: 15px;
-  font-family: "Godo", sans-serif;
-  font-size: 17px;
-  color: white;
-  margin: 0 auto;
-  padding: auto 0 auto 0;
-  box-shadow: 3px 3px 3px 0px gray;
-  opacity: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-  &:active,
-  &:hover {
-    opacity: 100%;
-  }
-
-  // 고도체
-  @font-face {
-    font-family: "Godo";
-    font-style: normal;
-    font-weight: 700;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
-  }
 `;
 
 export default MainPage;
