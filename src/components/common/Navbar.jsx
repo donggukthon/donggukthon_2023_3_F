@@ -1,7 +1,7 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import {styled, Button} from "@mui/material";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { styled, Button } from '@mui/material';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -20,14 +20,14 @@ function Navbar() {
 }
 
 const StyledNavbar = {
-  margin: "30px 0px 0px 0px",
+  margin: '30px 0px 0px 0px',
 };
 
 const IconButton = styled(Button)({
-  display: "flex",
-  textAlign: "center",
-  alignItems: "center",
-  color: "#989898",
+  display: 'flex',
+  textAlign: 'center',
+  alignItems: 'center',
+  color: '#989898',
 });
 
 export default Navbar;

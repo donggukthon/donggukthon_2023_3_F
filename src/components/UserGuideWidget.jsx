@@ -1,6 +1,6 @@
-import Carousel from "react-material-ui-carousel";
-import styled from "styled-components";
-import fishbread from "../assets/images/santa_fishbread_brown.png";
+import Carousel from 'react-material-ui-carousel';
+import styled from 'styled-components';
+import fishbread from '../assets/images/santa_fishbread_brown.png';
 
 function UserGuideWidget() {
   // 이용 안내 컨텐츠 객체
@@ -26,7 +26,8 @@ function UserGuideWidget() {
       image: null,
     },
     {
-      content: "Q. 구체적인 기부 방식은 어떻게 되나요?<br><br>사랑의 붕어빵은 여러분이 선택한 요일 22시에 1000원 이하의 계좌 내 자투리 금액이 자동으로 모이게 됩니다.",
+      content:
+        'Q. 구체적인 기부 방식은 어떻게 되나요?<br><br>사랑의 붕어빵은 여러분이 선택한 요일 22시에 1000원 이하의 계좌 내 자투리 금액이 자동으로 모이게 됩니다.',
       image: null,
     },
     {
@@ -38,17 +39,21 @@ function UserGuideWidget() {
 
   return (
     <CarouselContainer>
-      <Carousel 
-        autoPlay={false} 
-        animation="slide" 
-        navButtonsAlwaysVisible={false} 
+      <Carousel
+        autoPlay={false}
+        animation="slide"
+        navButtonsAlwaysVisible={false}
         navButtonsAlwaysInvisible={false}
       >
         {items.map((item, i) => (
           <CarouselItem key={i}>
             <ContentContainer>
-              <TextContainer dangerouslySetInnerHTML={{__html: item.content}} />
-              {item.image && <ImageContainer src={item.image} alt="Fishbread" />}
+              <TextContainer
+                dangerouslySetInnerHTML={{ __html: item.content }}
+              />
+              {item.image && (
+                <ImageContainer src={item.image} alt="Fishbread" />
+              )}
             </ContentContainer>
           </CarouselItem>
         ))}
@@ -67,7 +72,7 @@ const CarouselItem = styled.div`
   height: 230px;
   display: flex;
   font-size: 14px;
-  font-family: "lineFont";
+  font-family: 'lineFont';
 `;
 
 const ContentContainer = styled.div`

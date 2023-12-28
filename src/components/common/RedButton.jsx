@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 function RedButton(props) {
   return (
-    <RedColorButton onClick={props.onClickFunc}>{props.children}</RedColorButton>
+    <RedColorButton onClick={props.onClickFunc}>
+      {props.children}
+    </RedColorButton>
   );
 }
 
@@ -13,7 +15,7 @@ const RedColorButton = styled.button`
   background: var(--button-bg-color, #ed3333);
   border: none;
   border-radius: 15px;
-  font-family: "Godo", sans-serif;
+  font-family: 'Godo', sans-serif;
   font-size: 17px;
   color: white;
   margin: auto;
@@ -32,10 +34,11 @@ const RedColorButton = styled.button`
 
   // 고도체
   @font-face {
-    font-family: "Godo";
+    font-family: 'Godo';
     font-style: normal;
     font-weight: 700;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff')
+      format('woff');
   }
 `;
 

@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {useNavigate} from "react-router-dom";
-import styled from "styled-components";
-import Navbar from "../components/common/Navbar";
-import instance from "../api/axios";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import Navbar from '../components/common/Navbar';
+import instance from '../api/axios';
 
 function ChooseDayPage() {
   // 다음 페이지 이동
@@ -11,14 +11,14 @@ function ChooseDayPage() {
     // api 연결
     // handleDaySuccess();
     // 화면 이동
-    navigate("/home");
+    navigate('/home');
   };
 
   // 선택한 요일들 관리
   const [selectedDays, setSelectedDays] = useState([]);
-  const handleDayButtonClick = (day) => {
+  const handleDayButtonClick = day => {
     if (selectedDays.includes(day)) {
-      setSelectedDays(selectedDays.filter((selectedDay) => selectedDay !== day));
+      setSelectedDays(selectedDays.filter(selectedDay => selectedDay !== day));
     } else {
       setSelectedDays([...selectedDays, day]);
     }
@@ -29,13 +29,13 @@ function ChooseDayPage() {
   // 3. "date": selectedDays로 문자열로 작성해도 되는지 !
   const handleDaySuccess = async () => {
     try {
-      const response = await instance.put("/api/v1/date", {
+      const response = await instance.put('/api/v1/date', {
         date: selectedDays,
       });
       console.log(selectedDays);
       console.log(response.data);
     } catch (err) {
-      console.error("Error: ", err);
+      console.error('Error: ', err);
     }
   };
   return (
@@ -52,32 +52,53 @@ function ChooseDayPage() {
       <FixedText>
         선택한 요일 22시에 계좌의 1000원 미만의
         <br />
-        자투리 금액이 기부됩니다!{" "}
+        자투리 금액이 기부됩니다!{' '}
       </FixedText>
       <DayRow>
-        <DayButton onClick={() => handleDayButtonClick("MON")} selected={selectedDays.includes("MON")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('MON')}
+          selected={selectedDays.includes('MON')}
+        >
           MON
         </DayButton>
       </DayRow>
       <DayRow>
-        <DayButton onClick={() => handleDayButtonClick("TUE")} selected={selectedDays.includes("TUE")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('TUE')}
+          selected={selectedDays.includes('TUE')}
+        >
           TUE
         </DayButton>
-        <DayButton onClick={() => handleDayButtonClick("WED")} selected={selectedDays.includes("WED")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('WED')}
+          selected={selectedDays.includes('WED')}
+        >
           WED
         </DayButton>
       </DayRow>
       <DayRow>
-        <DayButton onClick={() => handleDayButtonClick("THU")} selected={selectedDays.includes("THU")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('THU')}
+          selected={selectedDays.includes('THU')}
+        >
           THU
         </DayButton>
-        <DayButton onClick={() => handleDayButtonClick("FRI")} selected={selectedDays.includes("FRI")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('FRI')}
+          selected={selectedDays.includes('FRI')}
+        >
           FRI
         </DayButton>
-        <DayButton onClick={() => handleDayButtonClick("SAT")} selected={selectedDays.includes("SAT")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('SAT')}
+          selected={selectedDays.includes('SAT')}
+        >
           SAT
         </DayButton>
-        <DayButton onClick={() => handleDayButtonClick("SUN")} selected={selectedDays.includes("SUN")}>
+        <DayButton
+          onClick={() => handleDayButtonClick('SUN')}
+          selected={selectedDays.includes('SUN')}
+        >
           SUN
         </DayButton>
       </DayRow>
@@ -100,7 +121,7 @@ const CommentPart = styled.div`
   margin-top: 20px;
   margin-bottom: 30px;
   text {
-    font-family: "niceFont";
+    font-family: 'niceFont';
     font-size: 30px;
     font-weight: 700;
     margin: auto;
@@ -108,7 +129,7 @@ const CommentPart = styled.div`
 `;
 
 const FixedBoldText = styled.div`
-  font-family: "descriptBoldFont";
+  font-family: 'descriptBoldFont';
   font-size: 18px;
   font-weight: 100;
   color: #4a453a;
@@ -117,7 +138,7 @@ const FixedBoldText = styled.div`
 `;
 
 const FixedText = styled.div`
-  font-family: "descriptFont";
+  font-family: 'descriptFont';
   font-size: 13px;
   font-weight: 100;
   color: #4a453a;
@@ -131,10 +152,10 @@ const DayButton = styled.button`
   border: none;
   border-radius: 30px;
   margin: 10px;
-  font-family: "descriptBoldFont";
+  font-family: 'descriptBoldFont';
   font-size: 15px;
   opacity: 80%;
-  background-color: ${({selected}) => (selected ? "#EEBD53" : "white")};
+  background-color: ${({ selected }) => (selected ? '#EEBD53' : 'white')};
   cursor: pointer;
 
   &:active,
@@ -156,7 +177,7 @@ const StartButton = styled.button`
   background: var(--button-bg-color, #ed3333);
   border: none;
   border-radius: 15px;
-  font-family: "Godo", sans-serif;
+  font-family: 'Godo', sans-serif;
   font-size: 17px;
   color: white;
   margin: 50px auto 0 auto;
@@ -175,10 +196,14 @@ const StartButton = styled.button`
 
   // 고도체
   @font-face {
-    font-family: "Godo";
+    font-family: 'Godo';
     font-style: normal;
     font-weight: 700;
-    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2") format("woff2"), url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff") format("woff");
+    src:
+      url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2')
+        format('woff2'),
+      url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff')
+        format('woff');
   }
 `;
 

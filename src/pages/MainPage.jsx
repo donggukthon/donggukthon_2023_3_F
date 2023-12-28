@@ -1,21 +1,21 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import presentRoot from "../assets/images/present.png";
-import UserGuideWidget from "../components/UserGuideWidget";
-import RedButton from "../components/common/RedButton";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import presentRoot from '../assets/images/present.png';
+import UserGuideWidget from '../components/UserGuideWidget';
+import RedButton from '../components/common/RedButton';
 
 function MainPage() {
   const navigate = useNavigate();
 
   const onClickStart = () => {
-    navigate("/login");
+    navigate('/login');
   };
 
   return (
     <>
       <ImagePart>
-        <img src={presentRoot} width="180px" alt='img'/>
+        <img src={presentRoot} width="180px" alt="img" />
       </ImagePart>
       <TextPart>
         <text>
@@ -53,9 +53,9 @@ const TextPart = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  
+
   text {
-    font-family: "lineFont";
+    font-family: 'lineFont';
     font-size: 30px;
     font-weight: 700;
   }
